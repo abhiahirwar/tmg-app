@@ -1,0 +1,24 @@
+
+
+Started GET "/" for ::1 at 2015-05-08 12:54:09 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/abhi/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 17ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/properties" for ::1 at 2015-05-08 12:54:13 +1000
+Processing by Rails::InfoController#properties as */*
+  Rendered /Users/abhi/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.2.0/lib/rails/templates/rails/info/properties.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 9.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 13:19:05 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/abhi/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 50ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/properties" for ::1 at 2015-05-08 13:19:08 +1000
+Processing by Rails::InfoController#properties as */*
+  Rendered /Users/abhi/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.2.0/lib/rails/templates/rails/info/properties.html.erb (0.4ms)
+Completed 200 OK in 28ms (Views: 9.0ms | ActiveRecord: 0.7ms)
