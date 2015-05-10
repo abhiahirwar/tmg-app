@@ -82,4 +82,18 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.assets.initialize_on_precompile = false
+
+  config.action_mailer.default_url_options = { host: 'localhost'}
+  
+  ENV["GMAIL_USERNAME"] = 'abhiindiaus@gmail.com'
+  ENV["GMAIL_PASSWORD"] = 'abh1shek'
+
+  config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "mail.google.com",####important
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
 end

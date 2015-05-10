@@ -17,4 +17,11 @@ RSpec.describe StaticPagesController, type: :controller do
 		end
 	end
 
+	describe "GET Pre-enrolment" do
+	  it "renders the Pre-enrolment template" do
+			get "pre-enrolment"
+			expect(response).to render_template("pre-enrolment")
+		end
+	end
+
 end
