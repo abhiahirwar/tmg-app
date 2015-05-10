@@ -1,0 +1,10 @@
+<h1>Questions</h1>
+<table>
+	<tr><th>Title</th><th>Content</th></tr>
+	<% @questions.each do |q| %>
+		<tr>
+			<td><%= link_to q.title, admin_form_path(q) %> </td>
+			<td><%= q.content %></td>
+		</tr>
+	<% end %>
+</table>

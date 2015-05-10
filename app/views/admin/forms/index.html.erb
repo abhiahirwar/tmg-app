@@ -1,0 +1,10 @@
+<h1>Forms</h1>
+<table>
+	<tr><th>Name</th><th>Description</th></tr>
+	<% @forms.each do |f| %>
+		<tr>
+			<td><%= link_to f.form_name, admin_form_path(f) %> </td>
+			<td><%= f.description %></td>
+		</tr>
+	<% end %>
+</table>
