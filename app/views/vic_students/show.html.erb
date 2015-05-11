@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vsn:</strong>
+  <%= @vic_student.vsn %>
+</p>
+
+<p>
+  <strong>Latest school:</strong>
+  <%= @vic_student.latest_school %>
+</p>
+
+<p>
+  <strong>Previous school:</strong>
+  <%= @vic_student.previous_school %>
+</p>
+
+<%= link_to 'Edit', edit_vic_student_path(@vic_student) %> |
+<%= link_to 'Back', vic_students_path %>

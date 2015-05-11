@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Highest school level:</strong>
+  <%= @school.highest_school_level %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @school.year %>
+</p>
+
+<p>
+  <strong>Secondary school:</strong>
+  <%= @school.secondary_school %>
+</p>
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>

@@ -1,0 +1,14 @@
+<div class="ques">
+  8. Previous qualifications received
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <p>Have you successfully completed any of the following qualifications?</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2"><%= f.check_box :completed_qualification, label: 'No' %></div>
+  <div class="col-sm-2"><%= f.check_box :completed_qualification, label: 'Yes' %></div>
+  <div class="col-sm-4"><%= f.text_field :completed_qualification, label: "If Yes Please indicate" %></div>
+    <div class="col-sm-4"><%= f.text_field :qualification_received_location, label: 'Where' %></div>
+</div>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Birth country:</strong>
+  <%= @language_culture_diversity.birth_country %>
+</p>
+
+<p>
+  <strong>Home language:</strong>
+  <%= @language_culture_diversity.home_language %>
+</p>
+
+<p>
+  <strong>English level:</strong>
+  <%= @language_culture_diversity.english_level %>
+</p>
+
+<%= link_to 'Edit', edit_language_culture_diversity_path(@language_culture_diversity) %> |
+<%= link_to 'Back', language_culture_diversities_path %>

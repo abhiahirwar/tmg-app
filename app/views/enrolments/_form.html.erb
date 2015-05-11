@@ -1,0 +1,110 @@
+<div class="row" id="enrolment-form">
+  <div class="">
+    <%= bootstrap_form_for(@enrolment) do |f| %>
+      <% if @enrolment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@enrolment.errors.count, "error") %> prohibited this enrolment from being saved:</h2>
+
+          <ul>
+          <% @enrolment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="ques">
+        1. Enrollment details
+      </div>
+      <%= f.select(:course_id, course_for_select, :prompt => 'Select', label: 'Tittle of Course/Qualification') %>
+
+      <%= f.grouped_collection_select :delivery_mode, Course.all, :delivery_mode_to_array, :name, :to_s, :to_s, :prompt => 'Select' %>
+      
+      <div class="ques">
+        2. Your details
+      </div>
+        <%= f.fields_for :student, @student do |s| -%>
+          <%= render 'student_fields', :f => s %>
+        <% end -%>
+        <%= f.fields_for :address, @address do |a| -%>
+          <%= render 'address_fields', :f => a %>
+        <% end -%>
+        <%= f.fields_for :employer, @employer do |e| -%>
+          <%= render 'employer_fields', :f => e %>
+        <% end -%>
+        
+        <div class="ques">
+          4. Emergency Contact Details
+        </div>
+        <%= f.fields_for :emergency_contact, @emergency_contct do |e| -%>
+          <%= render 'emergency_fields', :f => e, :contact => '1' %>
+        <% end -%>
+       
+        <%= f.fields_for :emergency_contact1, @emergency_contct1 do |e| -%>
+          <%= render 'emergency_fields', :f => e, :contact => '2' %>
+        <% end -%>
+       
+        <%= f.fields_for :language_culture_diversity, @language_culture_diversity do |e| -%>
+          <%= render 'lan_diversity_fields', :f => e %>
+        <% end -%>
+        
+        <%= render 'disabilty_fields', :f => f %>
+        
+        <%= f.fields_for :school, @school do |e| -%>
+          <%= render 'school_fields', :f => e %>
+        <% end -%>
+        <%= render 'previous_qualification_fields', :f => f %>
+    
+        <%= f.fields_for :employment, @employment do |e| -%>
+          <%= render 'employment_fields', :f => e %>
+        <% end -%>
+        
+        <div class="ques">
+          10. Study Reason
+        </div>
+         <%= f.fields_for :student, @student do |s| -%>
+          <%= s.select :study_reason, study_reason_select, :prompt => 'Select', label: 'Which Of the following categories, which BEST describes your main reason for undertaking this course/traineeship/apprenticeship?' %>
+         <% end -%>
+
+        <div class="ques">
+          11. Australian Citizen/Permanent Resident
+        </div>
+         <%= f.fields_for :student, @student do |s| -%>
+          <%= s.select :aus_citizen,  citizen_select, :prompt => 'Select', label: 'Are you an Australian Permanent Resident/Citizen/New Zealand Citizen?' %>
+         <% end -%>
+       
+        <%= f.fields_for :vic_student, @vic_student do |e| -%>
+          <%= render 'vic_student_fields', :f => e %>
+        <% end -%>
+
+        <div class="ques">
+          13. Unique Student Identifier (USI)
+          <span class="glyphicon glyphicon-question-sign" data-toggle="popover" title="Unique Student Identifier" data-content="A Unique Student Identifier (USI) is a reference number made up of numbers and letters that give students access to their USI accounts. A USI will allow an individual’s USI account to be linked to the National Vocational Education and Training (VET) Data Collection allowing an individual to see all of their training results from all providers including all completed training units and qualifications.It is a Government requirement that a student needs a USI when enrolling or re-enrolling in nationally recognised training from1 January 2015. this includes if the student is enrolling for the first time, for example, if they are studying at TAFE or with a private training organisation, completing an apprenticeship or skill set, certificate or diploma course. It also applies to students continuing or completing (re-enrolling ) training, including nationally recognised training undertaken in secondary school."></span>
+        </div>
+        <%= f.fields_for :student, @student do |s| -%>
+          <%= s.text_field :usi, label: 'Enter Your USI' %>
+          <%= s.text_field :city_of_birth, label: 'Enter your city of birth' %>
+        <% end -%>
+
+        <div class="ques">
+          13. Vet Fee-Help students only
+          <span class="glyphicon glyphicon-question-sign" data-toggle="popover" title="Vet Fee-Help" data-content="I have read, completed and fully understand all the information contained in the request for VET FEE Help Assistance Form and VET FEE-Help Information Booklet 2015 provided to me by The Malka Group Pty Ltd. I acknowledge that it is my responsibility to ensure that I have sufficient VET FEE-HELP balance to cover the VET FEE-Help amounts applied for. I am aware that I am eligible for the amounts of VET FEE-Help assistance contained in this notice only if I have sufficient VET FEE-Help balance to cover those amounts. I have provided proof of my eligibility for VET FEE-Help"></span>
+        </div>
+
+        <%= f.form_group :vet  do %>
+          <%= f.check_box :vet do %>
+             I acknowledge that  <span class="glyphicon glyphicon-book" data-toggle="popover" title="Vet Fee-Help" data-content="I have read, completed and fully understand all the information contained in the request for VET FEE Help Assistance Form and VET FEE-Help Information Booklet 2015 provided to me by The Malka Group Pty Ltd. I acknowledge that it is my responsibility to ensure that I have sufficient VET FEE-HELP balance to cover the VET FEE-Help amounts applied for. I am aware that I am eligible for the amounts of VET FEE-Help assistance contained in this notice only if I have sufficient VET FEE-Help balance to cover those amounts. I have provided proof of my eligibility for VET FEE-Help"></span>
+          <% end %>
+        <% end %>
+    
+        <%= f.form_group :toc do %>
+          <%= f.check_box :toc do %>
+           I agree to enrolment privacy notice <span class="glyphicon glyphicon-book" data-toggle="popover" title="Enrolment privacy notice" data-content="I understand that: TMG is required to provide the Victorian Government, through the Department of Education and Early Childhood Development with student and training activity data which may include information I provide in this enrolment form. Information is required to be provided in accordance with the Victorian VET Student Statistical Collection Guidelines (which are available at http://www.education.vic.gov.au/training/providers/rto/Pages/datacollection.aspx). The Department may use the information provided to it for planning, administration, policy development, program evaluation, resource allocation, reporting and/or research activities. For these and other lawful purposes, the Department may also disclose information to its consultants, advisers, other government agencies, professional bodies and/or other organisations. I have been advised by the training organisation that I may be contacted and requested to participate in a National Centre for Vocational Education Research survey or a Department-endorsed project or audit or review. The Education and Training Reform Act 2006 requires TMG to collect and disclose my personal information for a number of purposes including the allocation to me of a Victorian Student Number and updating my personal information on the Victorian Student Register. For students eligible for VET Fee Help, the following privacy statement also applies: TMG is collecting the information in this form for the purpose of assessing my entitlement to Commonwealth assistance under the Higher Education Support Act 2003 and allocation of a Commonwealth Higher Education Student Support Number (CHESSN) to me. TMG will disclose this information to the Commonwealth Department of Industry, Innovation, Science, Research and Tertiary Education (DIISRTE) for those purposes. DIISRTE will store the information securely in the Higher Education Information Management System. DIISRTE may disclose the information to the Australian Taxation Office. TMG and DIISRTE will not otherwise disclose the information without my consent unless required or authorised by law. For more information in relation to how student information may be used or disclosed please contact TMG€™s Privacy Officer on phone [03 9890 3350] or email [info@tmg.edu.au].I hereby certify that the contents of this document, completed by me, are true and correct and that if Government funding is required I meet all eligibility requirements for Government Funding Training. I acknowledge and agree to the terms described in this privacy statement: The Malka Group would like to provide you, from time to time, with details of the courses and services offered by it. We believe that you will find some of this information of value to you but we cannot provide it without your consent."></span>
+          <% end %> 
+        <% end -%>
+    
+      <div class="actions">
+        <%= f.submit 'Submit', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

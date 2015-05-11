@@ -1,0 +1,1 @@
+json.extract! @pre_training_review, :id, :rpl, :credit_transfer, :area_of_work, :employment, :pathway, :preferred_learning_style, :delivery_mode, :speical_condition, :toc, :user_id, :created_at, :updated_at

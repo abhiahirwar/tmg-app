@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Language Culture Diversities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Birth country</th>
+      <th>Home language</th>
+      <th>English level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @language_culture_diversities.each do |language_culture_diversity| %>
+      <tr>
+        <td><%= language_culture_diversity.birth_country %></td>
+        <td><%= language_culture_diversity.home_language %></td>
+        <td><%= language_culture_diversity.english_level %></td>
+        <td><%= link_to 'Show', language_culture_diversity %></td>
+        <td><%= link_to 'Edit', edit_language_culture_diversity_path(language_culture_diversity) %></td>
+        <td><%= link_to 'Destroy', language_culture_diversity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Language culture diversity', new_language_culture_diversity_path %>

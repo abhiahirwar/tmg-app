@@ -1,0 +1,29 @@
+<%= form_for(@vic_student) do |f| %>
+  <% if @vic_student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vic_student.errors.count, "error") %> prohibited this vic_student from being saved:</h2>
+
+      <ul>
+      <% @vic_student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vsn %><br>
+    <%= f.text_field :vsn %>
+  </div>
+  <div class="field">
+    <%= f.label :latest_school %><br>
+    <%= f.text_field :latest_school %>
+  </div>
+  <div class="field">
+    <%= f.label :previous_school %><br>
+    <%= f.text_field :previous_school %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

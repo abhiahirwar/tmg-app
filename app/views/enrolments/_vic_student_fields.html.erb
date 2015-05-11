@@ -1,0 +1,21 @@
+<div class="ques">
+  12. Victorian Student number (Victorian students only) 
+  <span class="glyphicon glyphicon-question-sign" data-toggle="popover" title="Victorian Student number" data-content="To be completed by all students aged up to 24 years:Since 2009 in school and since 2011 for vocational education and training (VET) organisations and Adult Community Education providers, A Victorian Student Number (vsn) has been allocated upon enrolment to each individual student up to 24 years.Students should report their VSN on all subsequent enrolments at a Victorian school or training organisation. In particular, all students who are currently enrolled in either a VET provider or a Victorian school (including those already participating in a VET in schools program) should obtain their VSN from their current education or training organisation and report their VSN on this enrolment form. Students who are enrolling for the first time since the VSN was introduced will get a new VSN."></span>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <%= f.text_field :vsn, label: 'Enter your VSN' %>
+  </div>
+  <div class="col-sm-12">
+    <%= f.form_group :latest_school, label: { text: "Have you attended any Victorian school since 2009 or done any training with a vocational education and training (VET) registered training organisation or an Adult and Community Education provider in Victoria since 2011?" } do %>
+      <%= f.radio_button :latest_school, 0, label: "Yes – I have attended a Victorian school since 2009", checked: true %>
+      <%= f.radio_button :latest_school, 1, label: "No – I have not attended a Victorian school since 2009 or a TAFE or other VET training provider since the beginning of 2011." %>
+      <%= f.radio_button :latest_school, 2, label: "Yes – I have participated in training at a TAFE or other training organisation since the beginning of 2011" %>
+      <%= f.radio_button :latest_school, 3, label: "Yes – I have both attended a Victorian school since 2009 and participated in training at a TAFE or other training organisation since the beginning of 2011" %>
+    <% end %>
+
+  </div>
+  <div class="col-sm-12">
+    <%= f.text_field :previous_school, label: 'List the most recent training organisations with which you have participated in training in Victoria since 2011 (List up  to 3 training organisations)' %>
+  </div>
+</div>

@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  resources :enrolments
+
+  resources :vic_students
+
+  resources :employments
+
+  resources :schools
+
+  resources :language_culture_diversities
+
+  resources :emergency_contacts
+
+  resources :employers
+
+  resources :addresses
+
+  resources :students
+
+  resources :course_categories
+
+  resources :courses
+
+  resources :pre_training_reviews
+
   namespace :admin do
   get 'questions/index'
   end

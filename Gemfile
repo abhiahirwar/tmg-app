@@ -26,6 +26,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 
+gem 'cancan'
+
+gem 'bootstrap_form'
+
+gem 'jquery-turbolinks'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

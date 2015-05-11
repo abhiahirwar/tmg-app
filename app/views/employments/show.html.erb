@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employment status:</strong>
+  <%= @employment.employment_status %>
+</p>
+
+<p>
+  <strong>Recent occupation:</strong>
+  <%= @employment.recent_occupation %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @employment.industry %>
+</p>
+
+<%= link_to 'Edit', edit_employment_path(@employment) %> |
+<%= link_to 'Back', employments_path %>

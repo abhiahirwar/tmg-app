@@ -13,4 +13,10 @@ module ApplicationHelper
 	def body_id
     [controller_name, action_name].join('-')
   end
+
+  def labeled_form_for(object, options = {}, &block)
+	  options[:builder] = LabeledFormBuilder
+	  options[:html] = {:class => "form-horizontal"}
+	  form_for(object, options, &block)
+	end
 end

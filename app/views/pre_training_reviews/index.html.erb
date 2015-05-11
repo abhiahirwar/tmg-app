@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pre Training Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rpl</th>
+      <th>Credit transfer</th>
+      <th>Area of work</th>
+      <th>Employment</th>
+      <th>Pathway</th>
+      <th>Preferred learning style</th>
+      <th>Delivery mode</th>
+      <th>Speical condition</th>
+      <th>Toc</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pre_training_reviews.each do |pre_training_review| %>
+      <tr>
+        <td><%= pre_training_review.rpl %></td>
+        <td><%= pre_training_review.credit_transfer %></td>
+        <td><%= pre_training_review.area_of_work %></td>
+        <td><%= pre_training_review.employment %></td>
+        <td><%= pre_training_review.pathway %></td>
+        <td><%= pre_training_review.preferred_learning_style %></td>
+        <td><%= pre_training_review.delivery_mode %></td>
+        <td><%= pre_training_review.speical_condition %></td>
+        <td><%= pre_training_review.toc %></td>
+        <td><%= pre_training_review.user %></td>
+        <td><%= link_to 'Show', pre_training_review %></td>
+        <td><%= link_to 'Edit', edit_pre_training_review_path(pre_training_review) %></td>
+        <td><%= link_to 'Destroy', pre_training_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pre training review', new_pre_training_review_path %>

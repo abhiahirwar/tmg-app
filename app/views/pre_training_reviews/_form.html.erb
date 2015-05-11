@@ -1,0 +1,121 @@
+<div id="pre-training-review">
+  <%= form_for(@pre_training_review) do |f| %>
+    <% if @pre_training_review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@pre_training_review.errors.count, "error") %> prohibited this pre_training_review from being saved:</h2>
+
+        <ul>
+        <% @pre_training_review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <div class="ques">
+        Recognition of Prior Learning (RPL) 
+        <!-- Button trigger modal -->
+        <span class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#myModal">
+        </span>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Recognition of Prior Learning </h4>
+              </div>
+              <div class="modal-body">
+                <strong>RPL is the acknowledgment of skills and knowledge obtained through:</strong>
+                <ul>
+                  <li> Formal training or study, including courses at school, college, adult education, </li>
+                  <li> Occupational work</li>
+                  <li> Work experience, including paid and volunteer work</li>
+                  <li> Life experience, including skills attained through leisure pursuits such as and training programs musical, mechanical or linguistic abilities. RPL recognises this prior knowledge and experience and measures it against the units of the course in which the student is enrolled. A student may already have competencies in some of the units’ skills and/or knowledge taught in the course and may not need to complete the full training program.</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="desc">
+        <p>
+          Please review the course outline for the qualification you intend to undertake. If you believe that you are competent in some of the units described in the course outline, please state the units below and complete the RPL application form.
+          After reviewing the course outline, please list the units for which you could provide evidence of your competency
+        </p>
+      </div>
+      <%= f.text_field :rpl %>
+    </div>
+    <div class="field">
+      <div class="ques">
+        2. <%= f.label :credit_transfer %><br>
+      </div>
+      <div class="desc">
+        After reviewing the course outline, please list the units for which you can provide a copy of a statement of attainment/ or certificate.
+      </div>
+      <%= f.text_field :credit_transfer %>
+    </div>
+    <div class="field">
+      <div class="ques">
+        3. What areas of work are you interested in and your career aspirations?
+      </div>
+      <%= f.text_field :area_of_work %>
+    </div>
+    <div class="field">
+      <div class="ques">
+        4. What employment/Job are you looking for after completion of your studies? *
+      </div>
+      <%= f.text_field :employment %>
+    </div>
+    <div class="field">
+      <div class="ques">
+        5. Pathways (a job, further training or higher education). 
+      </div>
+      <%= f.text_field :pathway %>
+    </div>
+    <div class="field">
+      <div class="ques">
+        6. What is your preferred learning style?
+      </div>
+      <div class="custom-field">
+        <%= f.check_box :preferred_learning_style, :value => 'visual' %>  Visual learners (visual input and tend to remember things better if the information is organised and presented visually e.g. images, charts and flow diagrams)
+      </div>
+      <div class="custom-field">
+        <%= f.check_box :preferred_learning_style, :value => 'auditory' %>Auditory learners (auditory input and remember things best when they hear them)
+      </div>
+      <div class="custom-field">
+        <%= f.check_box :preferred_learning_style, :value => 'kinaesthetic' %>Kinaesthetic learners (input that is physical and concrete. Require action and movement to learn things, and need to do something to remember it)
+      </div>
+    </div>
+    <div class="field">
+      <div class="ques">
+        7. <%= f.label :delivery_mode %><br>
+      </div>
+      <%= f.select :delivery_mode, ['Distance', 'Workplace', 'Blended Mode', 'Salon', 'Training Venue', 'Online'] %>
+    </div>
+    <div class="field">
+     <div class="ques">
+      8. Is there anything that might prevent you from progressing through the training and assessment program? 
+     </div>
+     <div class="desc">
+      For example, physical injuries or a language barrier etc.
+     </div>
+      <%= f.text_field :speical_condition %>
+    </div>
+    <div class="field">
+      <%= f.check_box :toc %>I understand that I will need to complete a Language, Literacy and Numeracy (LLN) skills assessment to ensure I am ready to undertake the level of qualification I am applying for. If the results indicate any gaps between my skills and those required ACSF levels for the qualification/course I will be advised of further options or support that are open to help me to improve my LLN skills.
+
+    </div>
+    <div class="field">
+      <%= f.hidden_field :user_id %>
+    </div>
+    <div class="actions">
+      <%= f.submit :class => 'btn btn-primary', :value => 'Save & Next' %>
+    </div>
+  <% end %>
+</div>

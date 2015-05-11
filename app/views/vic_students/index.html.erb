@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vic Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vsn</th>
+      <th>Latest school</th>
+      <th>Previous school</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vic_students.each do |vic_student| %>
+      <tr>
+        <td><%= vic_student.vsn %></td>
+        <td><%= vic_student.latest_school %></td>
+        <td><%= vic_student.previous_school %></td>
+        <td><%= link_to 'Show', vic_student %></td>
+        <td><%= link_to 'Edit', edit_vic_student_path(vic_student) %></td>
+        <td><%= link_to 'Destroy', vic_student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vic student', new_vic_student_path %>
