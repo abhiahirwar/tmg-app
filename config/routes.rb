@@ -55,6 +55,10 @@ Rails.application.routes.draw do
   root  'static_pages#home'
   get   'help' => 'static_pages#help'
   get		'pre-enrolment' => 'static_pages#pre-enrolment'
+  get   'lln-test'  =>  'static_pages#lln_test'
+  get   'ids'   =>  'static_pages#ids'
+  get   'review'  =>  'static_pages#review'
+  get   'course-review' => 'static_pages#course_review'
   devise_for :users,:path => '', path_names: {sign_in: "login", sign_out: "logout"}, controllers: { registrations: "registrations" }
   
   namespace :admin do

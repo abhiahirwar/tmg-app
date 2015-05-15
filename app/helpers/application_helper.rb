@@ -19,4 +19,24 @@ module ApplicationHelper
 	  options[:html] = {:class => "form-horizontal"}
 	  form_for(object, options, &block)
 	end
+
+	def enrolment_progress
+		progress = 0
+		if current_user.pre_training_reviews.count != 0
+			progress = 20
+		elsif current_user.enrolments.count != 0
+			progress = 0
+		end
+		"#{progress}%"
+	end
+
+	def enrolment_step
+		step = "Start Online Application"
+		if current_user.pre_training_reviews.count != 0
+			step = "Continue Pre Training Review"
+		elsif (current_user.enrolments.count == 0) && (current_user.pre_training_reviews.count != 0)
+			step = "Complete Enrolment Details"
+		end
+		step
+	end
 end

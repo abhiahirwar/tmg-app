@@ -179,3 +179,16 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+.vspace {
+  display: inline-block;
+  &.vspace-10 {
+    margin-top: 10px;
+  }
+  &.vspace-100 {
+  margin-top: 100px;
+  }
+  &.vspace-500 {
+  margin-top: 500px;
+  }
+}

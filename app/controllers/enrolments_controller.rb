@@ -47,7 +47,8 @@ class EnrolmentsController < ApplicationController
 
     respond_to do |format|
       if @enrolment.save
-        format.html { redirect_to @enrolment, notice: 'Enrolment was successfully created.' }
+        # format.html { redirect_to @enrolment, notice: 'Enrolment was successfully created.' }
+        format.html { redirect_to lln_test_path, notice: 'Enrolment details completed.'}
         format.json { render :show, status: :created, location: @enrolment }
       else
         format.html { render :new }
@@ -61,7 +62,8 @@ class EnrolmentsController < ApplicationController
   def update
     respond_to do |format|
       if @enrolment.update(enrolment_params)
-        format.html { redirect_to @enrolment, notice: 'Enrolment was successfully updated.' }
+        # format.html { redirect_to @enrolment, notice: 'Enrolment was successfully updated.' }
+        format.html { redirect_to lln_test_path, notice: 'Enrolment details completed.'}
         format.json { render :show, status: :ok, location: @enrolment }
       else
         format.html { render :edit }

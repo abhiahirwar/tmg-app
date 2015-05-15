@@ -28,7 +28,8 @@ class PreTrainingReviewsController < ApplicationController
 
     respond_to do |format|
       if @pre_training_review.save
-        format.html { redirect_to @pre_training_review, notice: 'Pre training review was successfully created.' }
+        # format.html { redirect_to @pre_training_review, notice: 'Pre training review was successfully created.' }
+        format.html {redirect_to new_enrolment_path, notice: 'Pre training review is complete.'}
         format.json { render :show, status: :created, location: @pre_training_review }
       else
         format.html { render :new }
@@ -42,7 +43,12 @@ class PreTrainingReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @pre_training_review.update(pre_training_review_params)
-        format.html { redirect_to @pre_training_review, notice: 'Pre training review was successfully updated.' }
+        # format.html { redirect_to @pre_training_review, notice: 'Pre training review was successfully updated.' }
+        if (current_user.enrolments.count == 0)
+          format.html {redirect_to new_enrolment_path, notice: 'Pre training review is updated.'}
+        else
+          format.html {redirect_to edit_enrolment_path(current_user.enrolments.first), notice: 'Pre training review is updated.'}
+        end
         format.json { render :show, status: :ok, location: @pre_training_review }
       else
         format.html { render :edit }
