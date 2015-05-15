@@ -1,4 +1,5 @@
 class PreTrainingReviewsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pre_training_review, only: [:show, :edit, :update, :destroy]
 
   # GET /pre_training_reviews
