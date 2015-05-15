@@ -27,7 +27,7 @@
       <tr>
         <td><%= course.name %></td>
         <td><%= course.code %></td>
-        <td><%= course.course_category %></td>
+        <td><%= course.course_category.try(:title) %></td>
         <td><%= course.fee_for_service %></td>
         <td><%= course.vet_fee %></td>
         <td><%= course.gov_funded %></td>

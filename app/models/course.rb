@@ -5,4 +5,6 @@ class Course < ActiveRecord::Base
 		arr = delivery_mode.split(', ')
 		arr.map(&:capitalize)
 	end
+	validates :name, presence: true, uniqueness: true
 end
+
