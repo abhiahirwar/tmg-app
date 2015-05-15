@@ -1,0 +1,33 @@
+<h1><%= @test.name %> Answers</h1>
+
+<%= form_for(@test) do |f| %>
+  <% @users.each do |user| -%>
+  <h3><%= user.email %></h3>
+  <table>
+    <thead>
+      <tr>
+        <td>Questions</td>
+        <td>Answer</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @questions.each do |question| -%>
+      <tr>
+        <td><%= question.title %></td>
+        <td>
+        <%= f.fields_for :questions, question do |q| -%>
+          <%= q.fields_for :answers, question.answers.find_or_initialize_by(user: user) do |a| -%>
+            <%= a.text_area :content %>
+           
+          <% end -%>
+        <% end -%>
+        </td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>
+  <% end -%>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end -%>

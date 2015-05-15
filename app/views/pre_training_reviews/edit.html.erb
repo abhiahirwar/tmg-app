@@ -1,6 +1,9 @@
 <h1>Editing Pre Training Review</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @pre_training_review %> |
-<%= link_to 'Back', pre_training_reviews_path %>
+<% if current_user.enrolments.count == 0 %>
+	<%= link_to "Enrolment", new_enrolment_path, class: "btn btn-primary pull-right" %>
+<% else current_user.enrolments.first %>
+	<%= link_to "Edit Enrolment", edit_enrolment_path(current_user.enrolments.first), class: "btn btn-primary pull-right" %>
+<% end %>
+<%= link_to 'Back | Pre Enrolment', pre_enrolment_path, class: "btn btn-primary pull-left" %>

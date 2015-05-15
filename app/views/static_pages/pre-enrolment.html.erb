@@ -23,6 +23,10 @@
 	</ul>
 	<div class="links-box">
 		<%= link_to "May be", "#", :class => "pull-left btn btn-primary" %>
-		<%= link_to "I am ready", new_pre_training_review_path, :class => "pull-right btn btn-primary" %>
+		<% if current_user.pre_training_reviews.count == 0 %>
+			<%= link_to "I am ready", new_pre_training_review_path, :class => "pull-right btn btn-primary" %>
+		<% else current_user.pre_training_reviews.first %>
+			<%= link_to "Edit Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first), :class => "pull-right btn btn-primary" %>
+		<% end %>
 	</div>
 </div>

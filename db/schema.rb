@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511034625) do
+ActiveRecord::Schema.define(version: 20150515000137) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "property_name", limit: 255
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150511034625) do
     t.text     "content",     limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "test_id",     limit: 4
   end
 
   add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(version: 20150511034625) do
     t.integer  "postal_address_id",               limit: 4
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+    t.integer  "user_id",                         limit: 4
   end
 
   add_index "enrolments", ["address_id"], name: "index_enrolments_on_address_id", using: :btree
@@ -121,6 +123,7 @@ ActiveRecord::Schema.define(version: 20150511034625) do
   add_index "enrolments", ["language_culture_diversity_id"], name: "index_enrolments_on_language_culture_diversity_id", using: :btree
   add_index "enrolments", ["school_id"], name: "index_enrolments_on_school_id", using: :btree
   add_index "enrolments", ["student_id"], name: "index_enrolments_on_student_id", using: :btree
+  add_index "enrolments", ["user_id"], name: "index_enrolments_on_user_id", using: :btree
   add_index "enrolments", ["vic_student_id"], name: "index_enrolments_on_vic_student_id", using: :btree
 
   create_table "forms", force: :cascade do |t|
@@ -161,6 +164,7 @@ ActiveRecord::Schema.define(version: 20150511034625) do
     t.integer  "form_id",    limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "test_id",    limit: 4
   end
 
   add_index "questions", ["form_id"], name: "index_questions_on_form_id", using: :btree
@@ -189,6 +193,12 @@ ActiveRecord::Schema.define(version: 20150511034625) do
     t.string   "study_reason",  limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

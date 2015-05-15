@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :tests do
+    get 'answers', on: :member
+  end
+
   resources :enrolments
 
   resources :vic_students

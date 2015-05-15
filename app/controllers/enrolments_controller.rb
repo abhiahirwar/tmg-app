@@ -91,7 +91,7 @@ class EnrolmentsController < ApplicationController
       params.require(:enrolment).permit(:course_id, :delivery_mode, :employer_id, :emergeny_contact_id, 
                                         :language_culture_diversity_id, :school_id, :employment_id, 
                                         :vic_student_id, :completed_qualification, 
-                                        :qualification_received_location, :vet, :toc, 
+                                        :qualification_received_location, :vet, :toc, :user_id, 
                                         {student_attributes: [:id, :title, :surname, :firstname, :middlename, 
                                           :dob, :home_phone, :mobile, :email, :city_of_birth, :usi, 
                                           :disabiltiy, :aus_citizen, :study_reason]}, 

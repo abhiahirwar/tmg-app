@@ -2,5 +2,8 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @enrolment %> |
-<%= link_to 'Back', enrolments_path %>
+<% link_to 'Show', @enrolment %> |
+<% link_to 'Back', enrolments_path %>
+
+<%= link_to 'Back | Pre Pre Training Review',  edit_pre_training_review_path(current_user.try(:pre_training_reviews).first), class: "btn btn-primary pull-left" %>
+

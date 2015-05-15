@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
-  # attr_accessible :mobile
+  has_many :pre_training_reviews
+  has_many :enrolments
+  has_many :answers
+  has_many :questions, through: :answers
 end

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @test.name %>
+</p>
+
+	<% @test.questions.each do |question| %>
+		<h2><%= question.title %></h2>
+			<ul>
+				<% question.answers.each do |answer| %>
+					<li><%= answer.content %></li>
+				<% end %>
+			</ul>
+	<% end %>
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>
