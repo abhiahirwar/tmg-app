@@ -93,7 +93,7 @@ class EnrolmentsController < ApplicationController
     def enrolment_params
       params.require(:enrolment).permit(:course_id, :delivery_mode, :employer_id, :emergeny_contact_id, 
                                         :language_culture_diversity_id, :school_id, :employment_id, 
-                                        :vic_student_id, :completed_qualification, 
+                                        :vic_student_id, :completed_qualification, :course_category_id,
                                         :qualification_received_location, :vet, :toc, :user_id, 
                                         {student_attributes: [:id, :title, :surname, :firstname, :middlename, 
                                           :dob, :home_phone, :mobile, :email, :city_of_birth, :usi, 

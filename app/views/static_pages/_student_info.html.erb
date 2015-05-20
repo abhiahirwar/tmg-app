@@ -1,0 +1,16 @@
+<% user = current_user %>
+<% student = user.try(:enrolments).try(:first).try(:student) %>
+
+<% if student %>
+	First Name: <%= student.try(:firstname) %><br>
+	Last Name:	<%= student.try(:surname) %><br>
+	Middle Name:	<%= student.try(:middlename) %><br>
+	Date Of Birth:	<%= student.try(:dob) %><br>
+	Home Phone:	<%= student.try(:home_phone) %><br>
+	Email:	<%= student.try(:email) %><br>
+	Birth City:	<%= student.try(:city_of_birth) %><br>
+	USI:	<%= student.try(:usi) %><br>
+	Disability:	<%= student.try(:disabiltiy) %><br>	
+	Australian Citizen:	<%= student.try(:aus_citizen) %><br>
+	Study Reason: 	<%= student.try(:study_reason) %>
+<% end %>

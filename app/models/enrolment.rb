@@ -11,6 +11,7 @@ class Enrolment < ActiveRecord::Base
   belongs_to :employment
   belongs_to :vic_student
   belongs_to :user
+  belongs_to :course_category
 
   accepts_nested_attributes_for :student, :address, :employment, :employer, :emergency_contact, 
   															:school, :language_culture_diversity, :vic_student, :postal_address,

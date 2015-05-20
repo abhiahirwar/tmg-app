@@ -18,9 +18,3 @@ module EnrolmentsHelper
 			'Yes – I have both attended a Victorian school since 2009 and participated in training at a TAFE or other training organisation since the beginning of 2011']
 	end
 end
-
-['Yes – I have attended a Victorian school since 2009',
-'No – I have not attended a Victorian school since 2009 or a TAFE or other VET training provider since the beginning of 2011. (No more questions if you answer No above)',
-'Yes – I have participated in training at a TAFE or other training organisation since the beginning of 2011',
-'Yes – I have both attended a Victorian school since 2009 and participated in training at a TAFE or other training organisation since the beginning of 2011']
-

@@ -15,8 +15,9 @@
       <div class="ques">
         1. Enrollment details
       </div>
-      <%= f.select(:course_id, course_for_select, :prompt => 'Select', label: 'Tittle of Course/Qualification') %>
-
+      <%= f.collection_select(:course_category_id, CourseCategory.all, :id, :title, :prompt => 'Select') %>
+     
+      <%= f.grouped_collection_select :course_id, CourseCategory.all, :courses, :title, :id, :name, :prompt => 'Select' %>
       <%= f.grouped_collection_select :delivery_mode, Course.all, :delivery_mode_to_array, :name, :to_s, :to_s, :prompt => 'Select' %>
       
       <div class="ques">

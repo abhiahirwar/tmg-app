@@ -4,6 +4,11 @@
 
 <p>Please review your Online Enrolment below. If they are all correct and completed, click Submit. A confirmation email will be sent to your email address within 24 hours. </p>
 <h3>Summary</h3>
+<div class="col-sm-12">
+	<% if user_signed_in? %>
+	<%= render 'student_info' %>
+	<% end %>
+</div>
 <div class="vspace vspace-100"></div>
 <p>All declaration from the enrolment form</p>
 <p><strong>What’s next?</strong><br>

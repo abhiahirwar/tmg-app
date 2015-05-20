@@ -8,6 +8,7 @@
           <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
        
           <%= f.text_field :mobile, autofocus: true, :class => "form-control", :placeholder => "Mobile" %>
+          <%= f.hidden_field :role, value: 'student' %>
       
           <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
                

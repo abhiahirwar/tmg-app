@@ -27,29 +27,6 @@ Rails.application.routes.draw do
 
   resources :pre_training_reviews
 
-  namespace :admin do
-  get 'questions/index'
-  end
-
-  namespace :admin do
-  get 'questions/show'
-  end
-
-  namespace :admin do
-  get 'questions/new'
-  end
-
-  namespace :admin do
-  get 'questions/create'
-  end
-
-  namespace :admin do
-  get 'questions/update'
-  end
-
-  namespace :admin do
-  get 'questions/destroy'
-  end
 
   # devise_for :users
   root  'static_pages#home'
@@ -65,5 +42,6 @@ Rails.application.routes.draw do
 	  resources :forms
 	  resources :questions
 	  resources :answers
+    resources :users
 	end
 end
