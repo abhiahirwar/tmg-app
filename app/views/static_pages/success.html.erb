@@ -7,7 +7,7 @@ Thank you for choosing TMG as your quality training provider. We are looking for
 <div class="row">
 	<div class="col-sm-12">
 		<div class="control-actions"> 
-		 	<%= link_to 'Signout', '#', class: 'btn btn-primary pull-right' %>
+		 	<%= link_to 'Signout',  destroy_user_session_path , method: "delete" , class: 'btn btn-primary pull-right' %>
 		</div>
 	</div>
 </div>
