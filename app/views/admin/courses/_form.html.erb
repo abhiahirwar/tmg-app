@@ -1,0 +1,45 @@
+<%= bootstrap_form_for([:admin, @course])do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :name %>
+
+  <%= f.text_field :code %>
+
+  <%= f.select(:course_category_id, course_categories_for_select, :prompt => 'Select') %>
+ 
+  <%= f.text_field :course_review_document, label: "Course review document URL"%>
+ 
+  <%= f.text_field :delivery_mode %>
+
+  <%= f.text_field :fee_for_service %>
+
+  <%= f.text_field :vet_fee %>
+
+  <%= f.text_field :gov_funded %>
+
+  <%= f.text_field :concession_gov_funded %>
+
+  <%= f.text_field :material_cost %>
+
+  <%= f.text_field :transfer_fee %>
+
+  <%= f.text_field :re_issue_certificate %>
+
+  <%= f.text_field :location_of_delivery %>
+
+  <%= f.text_field :study_duration %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

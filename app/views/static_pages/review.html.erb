@@ -1,16 +1,61 @@
-<h1>Review & Submit</h1>
-<p>Under Counstruction</p>
-<h2>Sample Template</h2>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="checkout-wrap">
+		  <ul class="checkout-bar">
 
-<p>Please review your Online Enrolment below. If they are all correct and completed, click Submit. A confirmation email will be sent to your email address within 24 hours. </p>
-<h3>Summary</h3>
-<div class="col-sm-12">
-	<% if user_signed_in? %>
-	<%= render 'student_info' %>
-	<% end %>
+		    <li class="visited first">
+		      
+		      <%= link_to "Login", root_path %>
+		    </li>
+		   
+		    <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
+		    
+		    <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
+		    
+		    <li class="visited "><%= link_to "Enrolment", pre_enrolment_path  %></li>
+		    
+		    <li class="visited"><%= link_to "LLN", lln_test_path %></li>
+		    
+		    <li class="visited" ><%= link_to "Ids",  ids_path%></li>
+		    
+		    <li class="visited"><%= link_to "Course Review", course_review_path  %></li>
+
+		    <li class="active last"><%= link_to "Review", review_path %></li>     
+		  </ul>
+		</div>
+	</div>
 </div>
+
+<h1>Review & Submit</h1>
+<p>Please review your Online Enrolment below. If they are all correct and completed, click Submit. A confirmation email will be sent to your email address within 24 hours. </p>
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Pre Training Review </a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Enrolment</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Student Ids </a></li>
+   
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+    	<%= render 'static_pages/application_information/pre_training_review_info', :pre_training_review => current_user.pre_training_reviews.first %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+    	<%= render 'static_pages/application_information/enrolment', :enrolment => current_user.enrolments.first %>
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+    	<%= render 'static_pages/application_information/student_ids', :enrolment => current_user.enrolments.first %>
+    </div>
+    
+  </div>
+
+</div>
+<%= link_to "Submit by email", :controller => "enrolments", :action => "send_enrolment_mail", :id => current_user.try(:enrolments).try(:first).try(:id) %>
 <div class="vspace vspace-100"></div>
-<p>All declaration from the enrolment form</p>
 <p><strong>What’s next?</strong><br>
 Your enrolment will be reviewed and one of your Industry Consultant will be in contact with you within 48 hours to finalise the enrolment and conduct a short interview. 
 Thank you for choosing TMG as your quality training provider. We are looking forward to welcoming you soon!</p>
@@ -18,7 +63,7 @@ Thank you for choosing TMG as your quality training provider. We are looking for
 <div class="row">
 	<div class="col-sm-12">
 		<div class="control-actions">
-			<%= link_to 'Back', ids_path, class: 'btn btn-primary pull-left' %> 
+			<%= link_to 'Back', enrolment_course_review_path(current_user.enrolments.first), class: 'btn btn-primary pull-left' %> 
 		 	<%= link_to 'Signout', '#', class: 'btn btn-primary pull-right' %>
 		</div>
 	</div>

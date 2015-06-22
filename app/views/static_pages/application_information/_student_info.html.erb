@@ -1,0 +1,69 @@
+     <h3>Personal Details</h3>
+        <% student = enrolment.try(:student) %>
+        <strong>Name:</strong> <%= "#{student.title} #{student.firstname} #{student.middlename} #{student.surname}" %><br>
+      
+        <strong>Dob:</strong>
+        <%= student.dob %><br>  
+
+      
+        <strong>Home phone:</strong>
+        <%= student.home_phone %><br> 
+
+      
+        <strong>Mobile:</strong>
+        <%= student.mobile %><br> 
+
+      
+        <strong>Email:</strong>
+        <%= student.email %><br> <br> 
+
+      
+        <strong>Address</strong>
+        <% address = enrolment.try(:address) %><br>  
+
+      
+        <strong>Property name:</strong>
+        <%= address.try(:property_name )%><br>  
+
+      
+        <strong>Street1:</strong>
+        <%= address.try(:street1 )%><br>  
+
+      
+        <strong>Street2:</strong>
+        <%= address.try(:street2 )%><br>  
+
+      
+        <strong>Suburb:</strong>
+        <%= address.try(:suburb )%><br> 
+
+      
+        <strong>Postcode:</strong>
+        <%= address.try(:postcode )%><br> 
+
+        <strong>State:</strong>
+        <%= address.try(:state )%><br>  
+
+      
+        <strong>Country:</strong>
+        <%= address.try(:country )%><br>  
+
+      
+        <strong>City of birth:</strong>
+        <%= student.city_of_birth %><br>  
+
+      
+        <strong>Usi:</strong>
+        <%= student.usi %><br>  
+
+      
+        <strong>Disabiltiy:</strong>
+        <%= student.disabiltiy %><br> 
+
+      
+        <strong>Aus citizen:</strong>
+        <%= student.aus_citizen %><br>  
+
+      
+        <strong>Study reason:</strong>
+        <%= student.study_reason %><br> 

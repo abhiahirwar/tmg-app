@@ -1,5 +1,5 @@
 <div id="pre-training-review">
-  <%= form_for(@pre_training_review) do |f| %>
+  <%= bootstrap_form_for(@pre_training_review) do |f| %>
     <% if @pre_training_review.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@pre_training_review.errors.count, "error") %> prohibited this pre_training_review from being saved:</h2>
@@ -49,68 +49,32 @@
           After reviewing the course outline, please list the units for which you could provide evidence of your competency
         </p>
       </div>
-      <%= f.text_field :rpl %>
     </div>
-    <div class="field">
-      <div class="ques">
-        2. <%= f.label :credit_transfer %><br>
-      </div>
-      <div class="desc">
-        After reviewing the course outline, please list the units for which you can provide a copy of a statement of attainment/ or certificate.
-      </div>
-      <%= f.text_field :credit_transfer %>
-    </div>
-    <div class="field">
-      <div class="ques">
-        3. What areas of work are you interested in and your career aspirations?
-      </div>
-      <%= f.text_field :area_of_work %>
-    </div>
-    <div class="field">
-      <div class="ques">
-        4. What employment/Job are you looking for after completion of your studies? *
-      </div>
-      <%= f.text_field :employment %>
-    </div>
-    <div class="field">
-      <div class="ques">
-        5. Pathways (a job, further training or higher education). 
-      </div>
-      <%= f.text_field :pathway %>
-    </div>
-    <div class="field">
-      <div class="ques">
-        6. What is your preferred learning style?
-      </div>
-      <div class="custom-field">
-        <%= f.check_box :preferred_learning_style, :value => 'visual' %>  Visual learners (visual input and tend to remember things better if the information is organised and presented visually e.g. images, charts and flow diagrams)
-      </div>
-      <div class="custom-field">
-        <%= f.check_box :preferred_learning_style, :value => 'auditory' %>Auditory learners (auditory input and remember things best when they hear them)
-      </div>
-      <div class="custom-field">
-        <%= f.check_box :preferred_learning_style, :value => 'kinaesthetic' %>Kinaesthetic learners (input that is physical and concrete. Require action and movement to learn things, and need to do something to remember it)
-      </div>
-    </div>
-    <div class="field">
-      <div class="ques">
-        7. <%= f.label :delivery_mode %><br>
-      </div>
-      <%= f.select :delivery_mode, ['Distance', 'Workplace', 'Blended Mode', 'Salon', 'Training Venue', 'Online'] %>
-    </div>
-    <div class="field">
-     <div class="ques">
-      8. Is there anything that might prevent you from progressing through the training and assessment program? 
-     </div>
-     <div class="desc">
-      For example, physical injuries or a language barrier etc.
-     </div>
-      <%= f.text_field :speical_condition %>
-    </div>
-    <div class="field">
-      <%= f.check_box :toc %>I understand that I will need to complete a Language, Literacy and Numeracy (LLN) skills assessment to ensure I am ready to undertake the level of qualification I am applying for. If the results indicate any gaps between my skills and those required ACSF levels for the qualification/course I will be advised of further options or support that are open to help me to improve my LLN skills.
+     
+    <%= f.text_field :rpl %>
+    <%= f.text_area :credit_transfer,label: "2. Credit Transfer", help: 'After reviewing the course outline, please list the units for which you can provide a copy of a statement of attainment/ or certificate.' %>
+   
+    
+     
+    <%= f.text_field :area_of_work %>
+    
+    <%= f.text_field :employment %>
+   
+    <%= f.text_field :pathway %>
+    
+    <%= f.form_group :preferred_learning_style, label: { text: "6. What is your preferred learning style?" } do %>
+      <%= f.radio_button :preferred_learning_style, 'visual', label: "Visual learners (visual input and tend to remember things better if the information is organised and presented visually e.g. images, charts and flow diagrams)", checked: true %>
+      <%= f.radio_button :preferred_learning_style, 'Auditory', label: "Auditory learners (auditory input and remember things best when they hear them)" %>
+      <%= f.radio_button :preferred_learning_style, 'Kinaesthetic', label: "Kinaesthetic learners (input that is physical and concrete. Require action and movement to learn things, and need to do something to remember it)" %>
+      
+    <% end %>
+    
+    <%= f.select :delivery_mode, ['Distance', 'Workplace', 'Blended Mode', 'Salon', 'Training Venue', 'Online'] %>
+    
+    <%= f.text_field :special_condition, help:"For example, physical injuries or a language barrier etc." %>
 
-    </div>
+    <%= f.check_box :toc %>
+
     <div class="field">
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>

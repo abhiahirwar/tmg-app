@@ -1,11 +1,53 @@
-<h1>LLN TEST</h1>
-<p>Under Construction</p>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="checkout-wrap">
+		  <ul class="checkout-bar">
+
+		    <li class="visited first">
+		      
+		      <%= link_to "Login", root_path %>
+		    </li>
+		   
+		    <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
+		    
+		    <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
+		    
+		    <li class="visited "><%= link_to "Enrolment", pre_enrolment_path  %></li>
+		    
+		    <li class="active"><%= link_to "LLN", lln_test_path %></li>
+		    
+		    <li class="next" ><%= link_to "Ids",  ids_path%></li>
+		    
+		    <li class=><%= link_to "Course Review", course_review_path  %></li>
+
+		    <li class=><%= link_to "Review", review_path %></li>     
+		  </ul>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<h1>LL&N Assessment</h1>
+		<p>This Language, Literacy and Numeracy Assessment Tool is a key part of the student assessment and enrolment process. The assessment process is undertaken by The Malka Group to ensure your vocational training is appropriate to your current skills level in literacy and numeracy. By completing the assessment you will be helping The Malka Group to provide training at the right level, with the right resources, for your skills and knowledge. This will assist you to get the most from your vocational training experience. The results of your Language, Literacy and Numeracy Assessment are confidential and will be stored in your student file. Once completed and assessed by an LLN assessor you will be notified of the most appropriate training program for you.</p>
+		<p>Your assessment will be in TWO sections.</p>
+		<ul>
+			<li>Written activities – to assess your learning, reading, writing and numeracy skills</li>
+			<li>An oral interview – our Industry Consultant will be in contact with you to conduct the interview</li>
+		</ul>
+		</p>
+		<h1>LLN Test</h1>
+
+		<%= link_to 'Sign up LLN Test Account', "http://learn.tmg.edu.au/login/signup.php?", class: "btn btn-primary"%> 
+
+		<%= link_to 'Undertake LLN Test', 'http://learn.tmg.edu.au/course/view.php?id=20', class: "btn btn-primary"%>
+	</div>
+</div>
 <div class="vspace vspace-100"></div>
 <div class="row">
 	<div class="col-sm-12">
 		<div class="control-actions">
 			<%= link_to 'Back', edit_enrolment_path(current_user.enrolments.first), class: 'btn btn-primary pull-left' %> 
-		 	<%= link_to 'Next', ids_path, class: 'btn btn-primary pull-right' %>
+		 	<%= link_to 'Next', enrolment_student_ids_path(current_user.enrolments.first), class: 'btn btn-primary pull-right' %>
 		</div>
 	</div>
 </div>

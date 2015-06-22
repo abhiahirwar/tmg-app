@@ -1,6 +1,6 @@
 class EnrolmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_enrolment, only: [:show, :edit, :update, :destroy]
+  before_action :set_enrolment, only: [:show, :edit, :update, :destroy, :send_enrolment_mail]
 
   # GET /enrolments
   # GET /enrolments.json
@@ -49,7 +49,7 @@ class EnrolmentsController < ApplicationController
     respond_to do |format|
       if @enrolment.save
         # format.html { redirect_to @enrolment, notice: 'Enrolment was successfully created.' }
-        format.html { redirect_to lln_test_path, notice: 'Enrolment details completed.'}
+        format.html { redirect_to enrolment_lln_test_path(@enrolment), notice: 'Enrolment details completed.'}
         format.json { render :show, status: :created, location: @enrolment }
       else
         format.html { render :new }
@@ -64,7 +64,7 @@ class EnrolmentsController < ApplicationController
     respond_to do |format|
       if @enrolment.update(enrolment_params)
         # format.html { redirect_to @enrolment, notice: 'Enrolment was successfully updated.' }
-        format.html { redirect_to lln_test_path, notice: 'Enrolment details completed.'}
+        format.html { redirect_to enrolment_lln_test_path(@enrolment), notice: 'Enrolment details completed.'}
         format.json { render :show, status: :ok, location: @enrolment }
       else
         format.html { render :edit }
@@ -81,6 +81,15 @@ class EnrolmentsController < ApplicationController
       format.html { redirect_to enrolments_url, notice: 'Enrolment was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def send_enrolment_mail
+    # EnrolmentMailer.welcome_email(current_user).deliver
+    Thread.new do
+      EnrolmentMailer.enrolment_review_email(current_user, @enrolment).deliver
+    end
+    flash[:notice] = "Enrolment successfully completed"
+    redirect_to success_path
   end
 
   private

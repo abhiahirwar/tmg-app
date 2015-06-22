@@ -76,6 +76,6 @@ class PreTrainingReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pre_training_review_params
-      params.require(:pre_training_review).permit(:rpl, :credit_transfer, :area_of_work, :employment, :pathway, :preferred_learning_style, :delivery_mode, :speical_condition, :toc, :user_id)
+      params.require(:pre_training_review).permit(:rpl, :credit_transfer, :area_of_work, :employment, :pathway, :preferred_learning_style, :delivery_mode, :special_condition, :toc, :user_id)
     end
 end

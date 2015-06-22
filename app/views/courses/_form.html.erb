@@ -1,4 +1,4 @@
-<%= labeled_form_for(@course) do |f| %>
+<%= bootstrap_form_for(@course) do |f| %>
   <% if @course.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
@@ -36,6 +36,8 @@
   <%= f.text_field :location_of_delivery %>
 
   <%= f.text_field :study_duration %>
+
+  <%= f.text_field :course_review_document%>
   <div class="actions">
     <%= f.submit %>
   </div>

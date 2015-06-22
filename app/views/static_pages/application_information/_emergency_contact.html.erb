@@ -1,0 +1,37 @@
+<h3>Emergency Contact</h3>
+      
+        <strong>Emergency contact 1</strong>
+        <% emergency_contact = enrolment.try(:emergency_contact) %><br>  
+      
+        <strong>Contact name:</strong>
+        <%= emergency_contact.try(:contact_name) %><br> 
+
+      
+        <strong>Relationship:</strong>
+        <%= emergency_contact.try(:relationship) %><br> 
+
+      
+        <strong>Home phone:</strong>
+        <%= emergency_contact.try(:home_phone) %><br> 
+
+      
+        <strong>Mobile:</strong>
+        <%= emergency_contact.try(:mobile) %><br> 
+      
+        <strong>Emergency contact 2</strong>
+        <% emergency_contact = enrolment.try(:emergency_contact1) %><br> 
+      
+        <strong>Contact name:</strong>
+        <%= emergency_contact.try(:contact_name) %><br> 
+
+      
+        <strong>Relationship:</strong>
+        <%= emergency_contact.try(:relationship) %><br> 
+
+      
+        <strong>Home phone:</strong>
+        <%= emergency_contact.try(:home_phone) %><br> 
+
+      
+        <strong>Mobile:</strong>
+        <%= emergency_contact.try(:mobile) %><br> 

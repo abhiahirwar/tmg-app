@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517232615) do
+ActiveRecord::Schema.define(version: 20150621222005) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "property_name", limit: 255
@@ -44,21 +44,22 @@ ActiveRecord::Schema.define(version: 20150517232615) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string   "name",                  limit: 255
-    t.string   "code",                  limit: 255
-    t.integer  "course_category_id",    limit: 4
-    t.decimal  "fee_for_service",                   precision: 10
-    t.decimal  "vet_fee",                           precision: 10
-    t.decimal  "gov_funded",                        precision: 10
-    t.decimal  "concession_gov_funded",             precision: 10
-    t.decimal  "material_cost",                     precision: 10
-    t.decimal  "transfer_fee",                      precision: 10
-    t.decimal  "re_issue_certificate",              precision: 10
-    t.string   "delivery_mode",         limit: 255
-    t.string   "location_of_delivery",  limit: 255
-    t.string   "study_duration",        limit: 255
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.string   "name",                   limit: 255
+    t.string   "code",                   limit: 255
+    t.integer  "course_category_id",     limit: 4
+    t.decimal  "fee_for_service",                    precision: 10
+    t.decimal  "vet_fee",                            precision: 10
+    t.decimal  "gov_funded",                         precision: 10
+    t.decimal  "concession_gov_funded",              precision: 10
+    t.decimal  "material_cost",                      precision: 10
+    t.decimal  "transfer_fee",                       precision: 10
+    t.decimal  "re_issue_certificate",               precision: 10
+    t.string   "delivery_mode",          limit: 255
+    t.string   "location_of_delivery",   limit: 255
+    t.string   "study_duration",         limit: 255
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.string   "course_review_document", limit: 255
   end
 
   add_index "courses", ["course_category_id"], name: "index_courses_on_course_category_id", using: :btree
@@ -134,6 +135,16 @@ ActiveRecord::Schema.define(version: 20150517232615) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.string   "image",        limit: 255
+    t.string   "category",     limit: 255
+    t.integer  "enrolment_id", limit: 4
+    t.integer  "user_id",      limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "language_culture_diversities", force: :cascade do |t|
     t.string   "birth_country", limit: 255
     t.string   "home_language", limit: 255
@@ -150,7 +161,7 @@ ActiveRecord::Schema.define(version: 20150517232615) do
     t.string   "pathway",                  limit: 255
     t.string   "preferred_learning_style", limit: 255
     t.string   "delivery_mode",            limit: 255
-    t.string   "speical_condition",        limit: 255
+    t.string   "special_condition",        limit: 255
     t.boolean  "toc",                      limit: 1
     t.integer  "user_id",                  limit: 4
     t.datetime "created_at",                           null: false
@@ -176,6 +187,20 @@ ActiveRecord::Schema.define(version: 20150517232615) do
     t.string   "secondary_school",     limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+  end
+
+  create_table "student_ids", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.string   "image",              limit: 255
+    t.string   "category",           limit: 255
+    t.integer  "enrolment_id",       limit: 4
+    t.integer  "user_id",            limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   create_table "students", force: :cascade do |t|

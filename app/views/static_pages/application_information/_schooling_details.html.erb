@@ -1,0 +1,52 @@
+
+<h3>Schooling & Employment Details</h3>
+        <strong>School:</strong>
+        <% school = enrolment.try(:school) %><br>  
+      
+        <strong>Highest school level:</strong>
+        <%= school.try(:highest_school_level) %><br>  
+
+      
+        <strong>Year:</strong>
+        <%= school.try(:year) %><br>  
+
+      
+        <strong>Secondary school:</strong>
+        <%= school.try(:secondary_school) %><br>  
+
+  
+        <h4>Employment </h4>
+        <% employment = enrolment.try(:employment) %>
+      
+        <strong>Employment status:</strong>
+        <%= employment.try(:employment_status) %><br> 
+
+      
+        <strong>Recent occupation:</strong>
+        <%= employment.try(:recent_occupation) %><br> 
+
+      
+        <strong>Industry:</strong>
+        <%= employment.try(:industry) %><br>  
+      
+        <h4>Vic student </h4>
+        <%vic_student = enrolment.try(:vic_student) %>
+      
+        <strong>Vsn:</strong>
+        <%= vic_student.try(:vsn) %><br>  
+
+      
+        <strong>Latest school:</strong>
+        <%= vic_student.try(:latest_school) %><br>  
+
+      
+        <strong>Previous school:</strong>
+        <%= vic_student.try(:previous_school) %><br>  
+
+      
+        <strong>Completed qualification:</strong>
+        <%= enrolment.try(:completed_qualification) %><br>  
+
+      
+        <strong>Qualication received location:</strong>
+        <%= enrolment.try(:qualification_received_location) %><br>  

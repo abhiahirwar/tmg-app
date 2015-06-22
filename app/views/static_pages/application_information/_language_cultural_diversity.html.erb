@@ -1,0 +1,13 @@
+<h3>Language cultural diversity</h3>
+<% language_culture_diversity = enrolment.try(:language_culture_diversity) %>  
+
+<strong>Birth country:</strong>
+<%= language_culture_diversity.try(:birth_country) %><br> 
+
+
+<strong>Home language:</strong>
+<%= language_culture_diversity.try(:home_language) %><br> 
+
+
+<strong>English level:</strong>
+<%= language_culture_diversity.try(:english_level) %><br> 

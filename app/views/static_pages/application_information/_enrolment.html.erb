@@ -1,0 +1,12 @@
+<%= render 'static_pages/application_information/course_info', :enrolment => enrolment %>
+<%= render 'static_pages/application_information/student_info', :enrolment => enrolment %>
+<%= render 'static_pages/application_information/employer_details', :enrolment => enrolment %>
+<%= render 'static_pages/application_information/emergency_contact', :enrolment => enrolment %>
+<%= render 'static_pages/application_information/language_cultural_diversity', :enrolment => enrolment %>
+<%= render 'static_pages/application_information/schooling_details', :enrolment => enrolment %>
+
+<strong>Vet fee-help student acknowledge:</strong>
+<%= enrolment.try(:vet) == 1 ? "Accept" : "Not Accepted" %><br>  
+
+<strong> Vet Fee-Help student agree to enrolment privacy notice</strong>
+<%= enrolment.try(:toc) == 1 ? "Accept" : "Not Accepted" %><br>  

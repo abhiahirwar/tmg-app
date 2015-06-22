@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to tmg.edu.au , <%= @user.email %></h1>
+    <p>
+      You have successfully submitted online enrolment.
+      your username is: <%= @user.email %>.<br>
+    </p>
+    <%= render 'static_pages/application_information/pre_training_review_info', :pre_training_review => @user.pre_training_reviews.first %>
+    <%= render 'static_pages/application_information/enrolment', :enrolment => @enrolment %>
+    <%= render 'static_pages/application_information/student_ids', :enrolment => @enrolment %>
+    <p>
+      To login to the enrolment app, just follow this link: <%= root_path %>.
+    </p>
+    <p>Thanks and have a great day!</p>
+  </body>
+</html>

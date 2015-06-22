@@ -1,0 +1,13 @@
+<h3> Course Information</h3>
+  <strong>Course:</strong>
+        <%= enrolment.try(:course).try(:name) %><br>  
+      
+        <strong>Course:</strong>
+        <%= enrolment.try(:course).try(:code) %><br>  
+
+      
+        <strong>Delivery mode:</strong>
+        <%= enrolment.try(:delivery_mode) %><br> 
+
+  <strong>Course Review Document Link : </strong>
+  <%= link_to "Course Review Document", enrolment.try(:course).try(:course_review_document), target: "_blank" %>

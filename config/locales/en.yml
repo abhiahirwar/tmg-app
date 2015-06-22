@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      pre_training_review:
+        rpl: "1. Recognition of Prior Learning"
+        area_of_work:	"3. What areas of work are you interested in and your career aspirations?"
+        employment:	"4. What employment/Job are you looking for after completion of your studies?"
+        pathway: "5. Pathways (a job, further training or higher education)"
+        preferred_learning_style:	"6. What is your preferred learning style?"
+        delivery_mode: "7. Delivery mode"
+        special_condition: "8. Is there anything that might prevent you from progressing through the training and assessment program?"
+        toc:	"I understand that I will need to complete a Language, Literacy and Numeracy (LLN) skills assessment to ensure I am ready to undertake the level of qualification I am applying for. If the results indicate any gaps between my skills and those required ACSF levels for the qualification/course I will be advised of further options or support that are open to help me to improve my LLN skills."
+    errors:
+      models:
+        pre_training_review:
+          attributes:
+            toc:
+              blank: "should be checked"
+

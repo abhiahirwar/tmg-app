@@ -1,0 +1,27 @@
+<div class="col-md-6">
+  <%= bootstrap_form_for([@enrolment, @student_id],layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+    <% if @student_id.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@student_id.errors.count, "error") %> prohibited this student_id from being saved:</h2>
+
+        <ul>
+        <% @student_id.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+      <%= f.text_field :title, label: "Title" %>
+    
+    
+      <%= f.file_field :image, label: "Document" %>
+    
+      <%= f.select :category, ["Driver’s Licence", "Australian Passport", "Medicare Card", "Visa(with Non-Australian Passport) for international students", "Birth Certificate (Australian)", "Certificate of Registration by Descent", "Citizenship Certificate", "Immi Card"], label: "Document Type" %>
+      <%= f.hidden_field :enrolment_id, value: @enrolment.try(:id) %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="actions">
+      <%= f.submit "Add Document", class: "btn btn-primary pull-left col-md-4" %>
+    </div>
+  <% end %>
+</div>

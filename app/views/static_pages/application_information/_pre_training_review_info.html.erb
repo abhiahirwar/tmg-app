@@ -1,0 +1,31 @@
+  <h3>Pre Training Review Summary</h3>
+  <strong>Recognition of Prior Learning (RPL) :</strong>
+  <%= pre_training_review.try(:rpl )%><br>
+
+  <strong>Credit transfer:</strong>
+  <%= pre_training_review.try(:credit_transfer )%><br>
+
+  <strong>Areas of work are you interested in and your career aspirations:</strong>
+  <%= pre_training_review.try(:area_of_work ) %><br>
+
+  <strong>Employment:</strong>
+  <%= pre_training_review.try(:employment )%><br>
+
+  <strong>Pathway:</strong>
+  <%= pre_training_review.try(:pathway )%><br>
+
+  <strong>Preferred learning style:</strong>
+  <%= pre_training_review.try(:preferred_learning_style )%><br>
+
+  <strong>Delivery mode:</strong>
+  <%= pre_training_review.try(:delivery_mode )%><br>
+
+  <strong>Speical condition:</strong>
+  <%= pre_training_review.try(:speical_condition ) ? pre_training_review.try(:speical_condition ) : "None" %><br>
+
+  <strong>Toc:</strong>
+  <%= pre_training_review.try(:toc) ? "Accepted" : "Not Accepted" %><br>
+
+  <strong>Student Email:</strong>
+  <%= pre_training_review.try(:user).try(:email) %>
+

@@ -1,0 +1,28 @@
+<h3>Student Ids</h3>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Document Link</th>
+        <th>Category</th>
+        <th ></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% enrolment.student_ids.each do |student_id| %>
+        <tr>
+          <td><%= student_id.title %></td>
+          <td>
+            <%= link_to(student_id.image.url ) do %>
+              <%= student_id.try(:image).try(:original_filename)%> <i class="glyphicon glyphicon-download"></i>
+            <% end %>
+         </td>
+          <td><%= student_id.category %></td>
+          <td><%= link_to 'Destroy', [enrolment, student_id], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

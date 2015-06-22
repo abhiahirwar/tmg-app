@@ -1,12 +1,54 @@
-<h1>IDs</h1>
-<p>Under Counstruction</p>
-<div class="vspace vspace-100"></div>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="checkout-wrap">
+		  <ul class="checkout-bar">
+
+		    <li class="visited first">
+		      
+		      <%= link_to "Login", root_path %>
+		    </li>
+		   
+		    <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
+		    
+		    <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
+		    
+		    <li class="visited "><%= link_to "Enrolment", pre_enrolment_path  %></li>
+		    
+		    <li class="visited"><%= link_to "LLN", lln_test_path %></li>
+		    
+		    <li class="active" ><%= link_to "Ids",  ids_path%></li>
+		    
+		    <li class="next"><%= link_to "Course Review", course_review_path  %></li>
+
+		    <li class=><%= link_to "Review", review_path %></li>     
+		  </ul>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<h1>IDs</h1>
+		<%= form_for StudentId.new do |f| %>
+		  <div class="field">
+		    <%= f.label :title %><br>
+		    <%= f.text_field :title %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :image %><br>
+		    <%= f.file_field :image %>
+		  </div>
+		  <%= f.submit %>
+		<% end %>
+		<p>Under Counstruction</p>
+		<div class="vspace vspace-100"></div>
+	</div>
+</div>
 
 <div class="row">
 	<div class="col-sm-12">
 		<div class="control-actions">
-			<%= link_to 'Back', course_review_path, class: 'btn btn-primary pull-left' %> 
-		 	<%= link_to 'Next', review_path, class: 'btn btn-primary pull-right' %>
+			<%= link_to 'Back', lln_test_path, class: 'btn btn-primary pull-left' %> 
+		 	<%= link_to 'Next', course_review_path, class: 'btn btn-primary pull-right' %>
 		</div>
 	</div>
 </div>

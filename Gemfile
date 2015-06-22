@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
+gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -32,6 +33,21 @@ gem 'bootstrap_form'
 
 gem 'jquery-turbolinks'
 
+gem 'mini_magick'
+
+gem 'carrierwave'
+
+# gem 'carrierwave-google_drive'
+
+gem 'sprockets-rails'
+
+gem 'fog-google'
+
+gem 'paperclip-googledrive'
+
+gem 'nprogress-rails'
+
+# gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

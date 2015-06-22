@@ -11,7 +11,7 @@ Rails.application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -34,21 +34,29 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.active_record.raise_in_transactional_callbacks = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
-  ENV["GMAIL_USERNAME"] = 'abhiindiaus@gmail.com'
-  ENV["GMAIL_PASSWORD"] = 'abh1shek'
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+  
+  ENV["GMAIL_USERNAME"] = 'tmgit@tmg.edu.au'
+  ENV["GMAIL_PASSWORD"] = 'Tmg$$Routers6'
+
+  ENV["CLIENT_ID"] = '530079316263-8dcpqaoeg3hp3asga08t0th5q03o5lav.apps.googleusercontent.com'
+  ENV["CLIENT_SECRET"] = 'eVxNy3K7o88j55ta10pQ9Lx3'
+  ENV["ACCESS_TOKEN"] = 'ya29.lgEHGtQQerEtZgLzQlUtPMOqSeo7kC-fcOzhvrgRKZlTR_TrDIA0p6WLJR6LI4H27K37ZHzU6YQfoQ'
+  ENV["REFRESH_TOKEN"] =  '1/aElQiV7cm8pEnfYa4N_3YVOc6xY6LOkQEY0bXpPD-f1IgOrJDtdun6zK6XiATCKT'
+  ENV['GOOGLE_DRIVE_PUBLIC_FOLDER_ID'] = '0B4QFjHfJ3wAFfm9GY3NWdXlNX2dZQmQzRzZTOGtHSFJ6eVNUTEh0al9RUTk5aG1MT0E3ZFE'
   config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: "mail.google.com",####important
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
-}
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "mail.google.com",####important
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
 
 
 end

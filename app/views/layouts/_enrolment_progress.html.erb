@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="checkout-wrap">
+		  <ul class="checkout-bar">
+
+		    <li class="visited first">
+		      
+		      <%= link_to "Login", root_path %>
+		    </li>
+		    <% if step == 'pre-enrolment' %>
+		    <li class="active"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
+		    <% else %>
+		    	<li class=""><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
+		    <% end %>
+		    <li class="next"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
+		    
+		    <li class=<%= ( step == 'enrolemnt')  ? 'active' : '' %>><%= link_to "Enrolment", pre_enrolment_path  %></li>
+		    
+		    <li class=<%= ( step == 'lln')  ? 'active' : '' %>><%= link_to "LLN", lln_test_path %></li>
+		    
+		    <li class= <%= ( step == 'ids')  ? 'active' : '' %>><%= link_to "Ids",  ids_path%></li>
+		    
+		    <li class=<%= ( step == 'course-review')  ? 'active' : '' %>><%= link_to "Course Review", course_review_path  %></li>
+
+		    <li class=<%= ( step == 'review')  ? 'active' : '' %>><%= link_to "Review", review_path %></li>     
+		  </ul>
+		</div>
+	</div>
+</div>
+<%= step %>

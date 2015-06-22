@@ -1,4 +1,5 @@
 class Admin::QuestionsController < ApplicationController
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
   def index
     @questions = Question.all
   end

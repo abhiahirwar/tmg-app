@@ -17,4 +17,6 @@
 //= require bootstrap
 //= require jquery.backstretch.min
 //= require tmg-login
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .

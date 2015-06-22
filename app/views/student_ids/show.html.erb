@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @student_id.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @student_id.image %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @student_id.category %>
+</p>
+
+<p>
+  <strong>Enrolment:</strong>
+  <%= @student_id.enrolment_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @student_id.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_student_id_path(@student_id) %> |
+<%= link_to 'Back', student_ids_path %>

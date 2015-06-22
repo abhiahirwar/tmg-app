@@ -2,13 +2,23 @@
   8. Previous qualifications received
 </div>
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-6">
     <p>Have you successfully completed any of the following qualifications?</p>
+    <ul>
+    	<li>Bachelor Degree or Higher Degree</li>
+			<li>Advanced Diploma (or Associate Degree)</li>
+			<li>Diploma (or Associate Diploma)</li>
+			<li>Certificate IV (or Advanced Certificate / Technician)</li>
+			<li>Certificate III (or Trade Certificate)</li>
+			<li>Certificate II</li>
+			<li>Certificate I</li>
+			<li>Certificates other than the above</li>
+    </ul>
   </div>
-</div>
-<div class="row">
-  <div class="col-sm-2"><%= f.check_box :completed_qualification, label: 'No' %></div>
-  <div class="col-sm-2"><%= f.check_box :completed_qualification, label: 'Yes' %></div>
-  <div class="col-sm-4"><%= f.text_field :completed_qualification, label: "If Yes Please indicate" %></div>
-    <div class="col-sm-4"><%= f.text_field :qualification_received_location, label: 'Where' %></div>
+  <div class="col-sm-6">
+  <div class="col-sm-6"><%= f.check_box :completed_qualification, label: 'No' %></div>
+  <div class="col-sm-6"><%= f.check_box :completed_qualification, label: 'Yes' %></div>
+  <div class="col-sm-6"><%= f.text_field :completed_qualification, label: "If Yes Please indicate" %></div>
+    <div class="col-sm-6"><%= f.text_field :qualification_received_location, label: 'Where' %></div>
+  </div>
 </div>

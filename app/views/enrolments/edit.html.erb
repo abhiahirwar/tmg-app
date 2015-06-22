@@ -1,11 +1,38 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="checkout-wrap">
+		  <ul class="checkout-bar">
+
+		    <li class="visited first">
+		      
+		      <%= link_to "Login", root_path %>
+		    </li>
+		   
+		    <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
+		    
+		    <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
+		    
+		    <li class="active "><%= link_to "Enrolment", pre_enrolment_path  %></li>
+		    
+		    <li class="next"><%= link_to "LLN", lln_test_path %></li>
+		    
+		    <li class= ><%= link_to "Ids",  ids_path%></li>
+		    
+		    <li class=><%= link_to "Course Review", course_review_path  %></li>
+
+		    <li class=><%= link_to "Review", review_path %></li>     
+		  </ul>
+		</div>
+	</div>
+</div>
 <h1>Editing Enrolment</h1>
 
 <%= render 'form' %>
 
-<% link_to 'Show', @enrolment %> |
+<% link_to 'Show', @enrolment %>
 <% link_to 'Back', enrolments_path %>
 
 <%= link_to 'Back | Pre Pre Training Review',  edit_pre_training_review_path(current_user.try(:pre_training_reviews).first), class: "btn btn-primary pull-left" %>
 <% if (current_user.enrolments.count != 0) %>
- 	<%= link_to 'Next', lln_test_path, class: 'btn btn-primary pull-right' %>
+ 	<%= link_to 'Next', enrolment_lln_test_path(@enrolment), class: 'btn btn-primary pull-right' %>
 <% end %>

@@ -1,0 +1,34 @@
+<h3> Employer Details</h3>
+       
+        <%employer = enrolment.try(:employer) %>
+      
+        <strong>Trading name:</strong>
+        <%= employer.try(:trading_name) %><br>  
+
+      
+        <strong>Contact name:</strong>
+        <%= employer.try(:contact_name) %><br>  
+
+      
+        <strong>Supervisor name:</strong>
+        <%= employer.try(:supervisor_name) %><br> 
+
+      
+        <strong>Training address:</strong>
+        <%= employer.try(:training_address) %><br>  
+
+      
+        <strong>Phone:</strong>
+        <%= employer.try(:phone) %><br> 
+
+      
+        <strong>Fax:</strong>
+        <%= employer.try(:fax) %><br> 
+
+      
+        <strong>Email:</strong>
+        <%= employer.try(:email) %><br> 
+
+      
+        <strong>Abn:</strong>
+        <%= employer.try(:abn) %><br> 
