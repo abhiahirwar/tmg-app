@@ -10,17 +10,19 @@
 		   
 		    <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
 		    
-		    <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
+		    <li class="visited">
+		    	<%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %>
+		    </li>
 		    
-		    <li class="visited "><%= link_to "Enrolment", pre_enrolment_path  %></li>
+		    <li class="visited "><%= link_to "Enrolment", "#"  %></li>
 		    
-		    <li class="visited"><%= link_to "LLN", lln_test_path %></li>
+		    <li class="visited"><%= link_to "LLN", "#" %></li>
 		    
-		    <li class="visited" ><%= link_to "Ids",  ids_path%></li>
+		    <li class="visited" ><%= link_to "Ids",  "#" %></li>
 		    
-		    <li class="visited"><%= link_to "Course Review", course_review_path  %></li>
+		    <li class="visited"><%= link_to "Course Review", "#"  %></li>
 
-		    <li class="active last"><%= link_to "Review", review_path %></li>     
+		    <li class="active last"><%= link_to "Review", "#" %></li>     
 		  </ul>
 		</div>
 	</div>
@@ -54,17 +56,15 @@
   </div>
 
 </div>
-<%= link_to "Submit by email", :controller => "enrolments", :action => "send_enrolment_mail", :id => current_user.try(:enrolments).try(:first).try(:id) %>
-<div class="vspace vspace-100"></div>
-<p><strong>What’s next?</strong><br>
-Your enrolment will be reviewed and one of your Industry Consultant will be in contact with you within 48 hours to finalise the enrolment and conduct a short interview. 
-Thank you for choosing TMG as your quality training provider. We are looking forward to welcoming you soon!</p>
+
+
+<div class="vspace vspace-10"></div>
 
 <div class="row">
-	<div class="col-sm-12">
+	<div class="col-sm-12 vspace vspace-10">
 		<div class="control-actions">
 			<%= link_to 'Back', enrolment_course_review_path(current_user.enrolments.first), class: 'btn btn-primary pull-left' %> 
-		 	<%= link_to 'Signout', '#', class: 'btn btn-primary pull-right' %>
+			<%= link_to "Submit", {:controller => "enrolments", :action => "send_enrolment_mail", :id => current_user.try(:enrolments).try(:first).try(:id)} ,{:class => "btn btn-primary pull-right"}%>
 		</div>
 	</div>
 </div>

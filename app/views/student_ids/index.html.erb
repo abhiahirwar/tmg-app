@@ -1,6 +1,33 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="checkout-wrap">
+      <ul class="checkout-bar">
 
-<h1>Add Student Ids-(Identification Documents)</h1>
+        <li class="visited first">
+          
+          <%= link_to "Login", root_path %>
+        </li>
+       
+        <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
+        
+        <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
+        
+        <li class="visited "><%= link_to "Enrolment", pre_enrolment_path  %></li>
+        
+        <li class="visited"><%= link_to "LLN", lln_test_path %></li>
+        
+        <li class="active" ><%= link_to "Ids",  ids_path%></li>
+        
+        <li class=><%= link_to "Course Review", course_review_path  %></li>
+
+        <li class=><%= link_to "Review", review_path %></li>     
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Add Student Ids-(Identification Documents)</h3>
 <p class='alert-warning'><%= @notice %></p>
 <div class="table-responsive">
   <table class="table">

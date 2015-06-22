@@ -12,15 +12,15 @@
 		    
 		    <li class="active"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
 		    
-		    <li class="next"><%= link_to "Enrolment", pre_enrolment_path  %></li>
+		    <li class="next"><%= link_to "Enrolment", '#'  %></li>
 		    
-		    <li class=><%= link_to "LLN", lln_test_path %></li>
+		    <li class=><%= link_to "LLN", '#' %></li>
 		    
-		    <li class= ><%= link_to "Ids",  ids_path%></li>
+		    <li class= ><%= link_to "Ids",  '#' %></li>
 		    
-		    <li class=><%= link_to "Course Review", course_review_path  %></li>
+		    <li class=><%= link_to "Course Review", '#'  %></li>
 
-		    <li class=><%= link_to "Review", review_path %></li>     
+		    <li class=><%= link_to "Review", '#' %></li>     
 		  </ul>
 		</div>
 	</div>
@@ -31,6 +31,6 @@
 <% if current_user.enrolments.count == 0 %>
 	<%= link_to "Enrolment", new_enrolment_path, class: "btn btn-primary pull-right" %>
 <% else current_user.enrolments.first %>
-	<%= link_to "Edit Enrolment", edit_enrolment_path(current_user.enrolments.first), class: "btn btn-primary pull-right" %>
+	<%= link_to "Next | Edit Enrolment", edit_enrolment_path(current_user.enrolments.first), class: "btn btn-primary pull-right" %>
 <% end %>
 <%= link_to 'Back | Pre Enrolment', pre_enrolment_path, class: "btn btn-primary pull-left" %>

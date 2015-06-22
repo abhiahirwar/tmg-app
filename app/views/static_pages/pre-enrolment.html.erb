@@ -34,11 +34,13 @@
 		<p>Please read the below information and click Start Now to commence when you are ready. </p>
 		<ul>
 			</li>
-			<li>	I  have read the Information For Prospective Learners (link to the course information page on the website)
+			<li>	I  have read the Information for
+				<%= link_to "Prospective Learners", 'https://drive.google.com/open?id=0B4QFjHfJ3wAFSGk4bGptdy1ySGc&authuser=0', target: '_blank' %>
 			</li>
-			<li>	I have read the course information and are aware of the course requirements (link to the course information page on the website)
+			<li>	I have read the course information and are aware of the course requirements.
 			</li>
-			<li>	I have read the VET FEE HELP requirements (if apply for VFH) (link to the VFH information page on the website)
+			<li>	I have read the
+				<%= link_to "VET FEE HELP", "http://www.tmg.edu.au/vet-fee-help/%20Review%20the%20%E2%80%9CThinking%20about%20a%20VET%20qualification%E2%80%9Dhttp://studyassist.gov.au/sites/StudyAssist/HelpfulResources/Documents/2015%20VET%20FEE-HELP%20Brochure.pdf" %> requirements
 			</li>
 			<li>	I have read the Eligibility requirements (if apply for government funded qualifications) (link to the Eligibility information page on the website)
 			</li>
@@ -54,7 +56,7 @@
 			<% if current_user.pre_training_reviews.count == 0 %>
 				<%= link_to "Start Now", new_pre_training_review_path, :class => "pull-right btn btn-primary" %>
 			<% else current_user.pre_training_reviews.first %>
-				<%= link_to "Edit Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first), :class => "pull-right btn btn-primary" %>
+				<%= link_to "Next", edit_pre_training_review_path(current_user.pre_training_reviews.first), :class => "pull-right btn btn-primary" %>
 			<% end %>
 		</div>
 	</div>
