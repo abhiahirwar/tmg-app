@@ -38,7 +38,7 @@
         <td><%= course.delivery_mode %></td>
         <td><%= course.location_of_delivery %></td>
         <td><%= course.study_duration %></td>
-        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Show', [:admin, course] %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

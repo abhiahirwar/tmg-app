@@ -2,7 +2,7 @@
 
 <h1>Listing Course Categories</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= course_category.title %></td>
         <td><%= course_category.content %></td>
-        <td><%= link_to 'Show', course_category %></td>
-        <td><%= link_to 'Edit', edit_course_category_path(course_category) %></td>
-        <td><%= link_to 'Destroy', course_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:admin, course_category] %></td>
+        <td><%= link_to 'Edit', edit_admin_course_category_path(course_category) %></td>
+        <td><%= link_to 'Destroy', [:admin, course_category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Course category', new_course_category_path %>
+<%= link_to 'New Course category', new_admin_course_category_path %>
