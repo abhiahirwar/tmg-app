@@ -30,7 +30,7 @@
 <%= render 'form' %>
 <% if current_user.enrolments.count == 0 %>
 	<%= link_to "Enrolment", new_enrolment_path, class: "btn btn-primary pull-right" %>
-<% else current_user.enrolments.first %>
+<% elsif current_user.enrolments.first %>
 	<%= link_to "Next | Edit Enrolment", edit_enrolment_path(current_user.enrolments.first), class: "btn btn-primary pull-right" %>
 <% end %>
 <%= link_to 'Back | Pre Enrolment', pre_enrolment_path, class: "btn btn-primary pull-left" %>
