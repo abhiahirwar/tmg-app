@@ -83,6 +83,13 @@ Rails.application.configure do
 
   config.assets.initialize_on_precompile = false
 
+  config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[Error] ",
+    :sender_address => %{"Tmg Notifier" <tmgit@tmg.edu.au>},
+    :exception_recipients => %w{abhiindiaus@gmail.com}
+  }
+
   config.action_mailer.default_url_options = { host: "tmg-app.herokuapp.com" }
   
   ENV["GMAIL_USERNAME"] = 'tmgit@tmg.edu.au'
