@@ -47,6 +47,8 @@ gem 'paperclip-googledrive'
 
 gem 'nprogress-rails'
 
+gem 'exception_notification'
+
 # gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use Unicorn as the app server
 # gem 'unicorn'
