@@ -83,7 +83,7 @@ Rails.application.configure do
 
   config.assets.initialize_on_precompile = false
 
-  config.middleware.use ExceptionNotification::Rack,
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => "[Error] ",
     :sender_address => %{"Tmg Notifier" <tmgit@tmg.edu.au>},
