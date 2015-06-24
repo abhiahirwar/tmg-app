@@ -29,10 +29,6 @@ module ApplicationHelper
 			if current_user.enrolments.count > 0
 				progress = 40
 			end
-			if current_user.enrolments.first.student_ids.count > 0
-				progress = 60
-			end
-
 		end
 		"#{progress}%"
 	end
