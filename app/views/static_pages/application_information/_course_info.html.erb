@@ -10,4 +10,6 @@
         <%= enrolment.try(:delivery_mode) %><br> 
 
   <strong>Course Review Document Link : </strong>
-  <%= link_to "Course Review Document", enrolment.try(:course).try(:course_review_document), target: "_blank" %>
+  <% if enrolment.try(:course).try(:course_review_document) %>
+  	<%= link_to "Course Review Document", enrolment.try(:course).try(:course_review_document), target: "_blank" %>
+  <% end %>
