@@ -85,9 +85,9 @@ class EnrolmentsController < ApplicationController
 
   def send_enrolment_mail
     # EnrolmentMailer.welcome_email(current_user).deliver
-    Thread.new do
+    # Thread.new do
       EnrolmentMailer.enrolment_review_email(current_user, @enrolment).deliver
-    end
+    # end
     flash[:notice] = "Enrolment successfully completed"
     redirect_to success_path
   end
