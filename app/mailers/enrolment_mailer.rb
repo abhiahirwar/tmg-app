@@ -1,5 +1,5 @@
 class EnrolmentMailer < ApplicationMailer
-	default from: 'noreply@tmg.edu.au'
+	default from: 'tmgit@tmg.edu.au'
   default bcc: "abhiindiaus@gmail.com"
   default bcc: "tmgit@tmg.edu.au"
 
