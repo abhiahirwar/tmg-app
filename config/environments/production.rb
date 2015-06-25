@@ -91,6 +91,7 @@ Rails.application.configure do
   }
 
   config.action_mailer.default_url_options = { host: "tmg-app.herokuapp.com" }
+  config.action_mailer.perform_deliveries = true
   
   ENV["GMAIL_USERNAME"] = 'tmgit@tmg.edu.au'
   ENV["GMAIL_PASSWORD"] = 'Tmg$$Routers6'
