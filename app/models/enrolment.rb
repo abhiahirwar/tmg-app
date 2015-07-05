@@ -14,7 +14,7 @@ class Enrolment < ActiveRecord::Base
   belongs_to :course_category
   has_many :student_ids
 
-  accepts_nested_attributes_for :student, :address, :employer, :emergency_contact, 
+  accepts_nested_attributes_for :student, :address, :employer, :emergency_contact,
   															:school, :language_culture_diversity, :vic_student, :postal_address,
   															:emergency_contact1
   accepts_nested_attributes_for :employment, :reject_if => :all_blank

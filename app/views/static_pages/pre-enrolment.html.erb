@@ -4,23 +4,23 @@
 		  <ul class="checkout-bar">
 
 		    <li class="visited first">
-		      
+
 		      <%= link_to "Login", root_path %>
 		    </li>
-		   
+
 		    <li class="active"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
-		    
+
 		    <li class="next"><%= link_to "Pre Training Review", "#" %></li>
-		    
+
 		    <li class=""><%= link_to "Enrolment", "#"  %></li>
-		    
+
 		    <li class=><%= link_to "LLN", "#" %></li>
-		    
+
 		    <li class= ><%= link_to "Ids",  "#" %></li>
-		    
+
 		    <li class=><%= link_to "Course Review", "#"  %></li>
 
-		    <li class=><%= link_to "Review", "#" %></li>     
+		    <li class=><%= link_to "Review", "#" %></li>
 		  </ul>
 		</div>
 	</div>
@@ -40,23 +40,24 @@
 			<li>	I have read the course information and are aware of the course requirements.
 			</li>
 			<li>	I have read the
-				<%= link_to "VET FEE HELP", "http://www.tmg.edu.au/vet-fee-help/%20Review%20the%20%E2%80%9CThinking%20about%20a%20VET%20qualification%E2%80%9Dhttp://studyassist.gov.au/sites/StudyAssist/HelpfulResources/Documents/2015%20VET%20FEE-HELP%20Brochure.pdf" %> requirements
+				<%= link_to "VET FEE HELP", "http://www.tmg.edu.au/vet-fee-help/", target: '_blank' %> requirements
 			</li>
 			<li>	I have read the Eligibility requirements (if apply for government funded qualifications) (link to the Eligibility information page on the website)
 			</li>
-			<li>	USI: from 1/1/2015 all students who enrolled in nationally recognised VET qualifications need to have a Unique Student Identifier (USI) before a Certificate or Statement of Attainment can be issued. You need your USI to complete the enrolment form. If you have not created a USI, please visit usi.gov.au , select ‘Create a USI’ link and follow the steps. 
+			<li>	USI: from 1/1/2015 all students who enrolled in nationally recognised VET qualifications need to have a Unique Student Identifier (USI) before a Certificate or Statement of Attainment can be issued. You need your USI to complete the enrolment form. If you have not created a USI, please visit usi.gov.au , select ‘Create a USI’ link and follow the steps.
 			</li>
 			<li>	Language Literacy and Numeracy (LL&N) test: To ensure we enroll you in the correct Australian Qualification Level we will conduct a LLN assessment. This will be conducted in two parts. The first part will be completed online and the second part of the LLN is verbal, so this will be conducted via Skype.
 			</li>
 			<li>	IDs: As part of our quality control you will be required to upload a photo of your ID and our Industry Consultant may need to confirm your eligibility (if apply for funded qualifications) later on. TMG ensures they follow the Privacy Act 1988. For further information please review page 24 of the Information For Prospective Learners
 			</li>
 		</ul>
+		<%= check_box_tag "checkrecc"	 %> I have read pre enrolment information.
 		<div class="links-box">
-			
+
 			<% if current_user.pre_training_reviews.count == 0 %>
-				<%= link_to "Start Now", new_pre_training_review_path, :class => "pull-right btn btn-primary" %>
+				<%= link_to "Start Now", new_pre_training_review_path, :class => "pull-right btn btn-primary", id: "indrecc" %>
 			<% elsif current_user.pre_training_reviews.first %>
-				<%= link_to "Next", edit_pre_training_review_path(current_user.pre_training_reviews.first), :class => "pull-right btn btn-primary" %>
+				<%= link_to "Next", edit_pre_training_review_path(current_user.pre_training_reviews.first), :class => "pull-right btn btn-primary", id: "indrecc" %>
 			<% end %>
 		</div>
 	</div>
