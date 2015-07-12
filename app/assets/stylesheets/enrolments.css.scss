@@ -211,3 +211,7 @@ ul.checkout-bar a {
 label.required:after {
   content:" *";
 }
+
+.popover{
+    max-width: 65%; /* Max Width of the popover (depending on the container!) */
+}

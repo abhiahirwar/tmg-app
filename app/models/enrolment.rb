@@ -18,7 +18,7 @@ class Enrolment < ActiveRecord::Base
   															:school, :language_culture_diversity, :vic_student, :postal_address,
   															:emergency_contact1
   accepts_nested_attributes_for :employment, :reject_if => :all_blank
-  validates :course_id, :delivery_mode, :address, presence: true
+  validates :course_id, :delivery_mode, :address,:course_category_id, presence: true
   validates_presence_of :emergency_contact1
 
 end

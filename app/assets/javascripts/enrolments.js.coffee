@@ -1,5 +1,4 @@
 jQuery ->
-  $('#enrolment_delivery_mode').parent().hide()
   states = $('#enrolment_delivery_mode').html()
   $('#enrolment_course_id').change ->
     country = $('#enrolment_course_id :selected').text()
@@ -11,7 +10,7 @@ jQuery ->
     else
       $('#enrolment_delivery_mode').empty()
       $('#enrolment_delivery_mode').parent().hide()
-  $('#enrolment_delivery_mode').parent().hide()
+
   courses = $('#enrolment_course_id').html()
   $('#enrolment_course_category_id').change ->
     country = $('#enrolment_course_category_id :selected').text()

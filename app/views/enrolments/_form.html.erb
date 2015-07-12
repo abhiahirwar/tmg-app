@@ -15,10 +15,10 @@
       <div class="ques">
         1. Enrolment details
       </div>
-      <%= f.collection_select(:course_category_id, CourseCategory.all, :id, :title, :prompt => 'Select') %>
+      <%= f.collection_select(:course_category_id, CourseCategory.all, :id, :title, :include_blank => 'Please Select') %>
 
-      <%= f.grouped_collection_select :course_id, CourseCategory.all, :courses, :title, :id, :name, :prompt => 'Select' %>
-      <%= f.grouped_collection_select :delivery_mode, Course.all, :delivery_mode_to_array, :name, :to_s, :to_s, :prompt => 'Select' %>
+      <%= f.grouped_collection_select :course_id, CourseCategory.all, :courses, :title, :id, :name, :include_blank => 'Please Select' %>
+      <%= f.grouped_collection_select :delivery_mode, Course.all, :delivery_mode_to_array, :name, :to_s, :to_s, :include_blank => 'Please Select' %>
 
       <div class="ques">
         2. Your details

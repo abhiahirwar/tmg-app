@@ -4,23 +4,23 @@
 		  <ul class="checkout-bar">
 
 		    <li class="visited first">
-		      
+
 		      <%= link_to "Login", root_path %>
 		    </li>
-		   
+
 		    <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
-		    
+
 		    <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
-		    
+
 		    <li class="visited "><%= link_to "Enrolment", "#"  %></li>
-		    
+
 		    <li class="visited"><%= link_to "LLN", "#" %></li>
-		    
+
 		    <li class="visited" ><%= link_to "Ids",  "#" %></li>
-		    
+
 		    <li class="visited"><%= link_to "Course Review", "#"  %></li>
 
-		    <li class="active last"><%= link_to "Review", "#" %></li>     
+		    <li class="active last"><%= link_to "Review", "#" %></li>
 		  </ul>
 		</div>
 	</div>
@@ -28,7 +28,7 @@
 
 <h1>Course Review</h1>
 
-<% enrolment = current_user.try(:enrolments).try(:first) %> 
+<% enrolment = current_user.try(:enrolments).try(:first) %>
 <% if enrolment.course %>
 	<% course = enrolment.course %>
 	<h2>Course Name : <%= course.try(:name) %>  </h2>
@@ -63,12 +63,12 @@
 	<li>For VET FEE-Help Students Only. I have read, completed and fully understand all the information contained in the request for VET FEE-Help Assistance Form and VET FEE-Help Information Booklet 2015 provided to me by The Malka Group Pty Ltd.</li>
 </ul>
 </p>
-<%= check_box_tag("I Agree") %> I agree to all terms and conditions.
+<%= check_box_tag("checkrecc") %> I agree to all terms and conditions.
 <div class="row">
 	<div class="col-sm-12">
 		<div class="control-actions">
-			<%= link_to 'Back', enrolment_student_ids_path(current_user.enrolments.first), class: 'btn btn-primary pull-left' %> 
-		 	<%= link_to 'Next', enrolment_review_path(current_user.enrolments.first), class: 'btn btn-primary pull-right' %>
+			<%= link_to 'Back', enrolment_student_ids_path(current_user.enrolments.first), class: 'btn btn-primary pull-left' %>
+		 	<%= link_to 'Next', enrolment_review_path(current_user.enrolments.first), class: 'btn btn-primary pull-right', id: "indrecc" %>
 		</div>
 	</div>
 </div>
