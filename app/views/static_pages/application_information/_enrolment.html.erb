@@ -6,7 +6,7 @@
 <%= render 'static_pages/application_information/schooling_details', :enrolment => enrolment %>
 
 <strong>Vet fee-help student acknowledge:</strong>
-<%= enrolment.try(:vet) == 1 ? "Accept" : "Not Accepted" %><br>  
+<%= enrolment.try(:vet) ? "Accept" : "Not Accepted" %><br>
 
 <strong> Vet Fee-Help student agree to enrolment privacy notice</strong>
-<%= enrolment.try(:toc) == 1 ? "Accept" : "Not Accepted" %><br>  
+<%= enrolment.try(:toc)  ? "Accept" : "Not Accepted" %><br>
