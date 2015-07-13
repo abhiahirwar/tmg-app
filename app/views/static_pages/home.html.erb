@@ -2,14 +2,14 @@
 	<h1>Welcome to TMG</h1>
 
 	<h2>TMG Prospect Student Enrollment sample application.</h2>
-	
+
 	<%= link_to enrolment_step, pre_enrolment_path, class: 'btn btn-default btn-primary btn-lg' %>
 	<% if user_signed_in? %>
-		<div class="progress">
+		<!-- <div class="progress">
 		  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= enrolment_progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= enrolment_progress %>">
 		    <span class="sr-only"><%= enrolment_progress %> Complete (success)</span>
 		  </div>
-		</div>
+		</div> -->
 	<% end %>
 </div>
 

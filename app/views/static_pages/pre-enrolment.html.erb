@@ -31,7 +31,7 @@
 		<h3>Welcome to TMG Online Enrolment!</h3>
 		<p>The enrolment process will take up to 1 hour to complete. Once the Online Enrolment has been submitted successfully, a confirmation email will be sent to your email address and our Industry Consultant will be in contact with you within 48 hours to confirm the information and process your enrolment. </p>
 		<p>If you wish to stop at any stage of the enrolment process, it’s ok. Just click Save and Log out. You can always come back to complete your enrolment at any time. </p>
-		<p>Please read the below information and click Start Now to commence when you are ready. </p>
+		<p>Please read the below information and select the checkbox and click Start Now to commence when you are ready. </p>
 		<ul>
 			</li>
 			<li>	I  have read the Information for
@@ -57,7 +57,7 @@
 			<% if current_user.pre_training_reviews.count == 0 %>
 				<%= link_to "Start Now", new_pre_training_review_path, :class => "pull-right btn btn-primary", id: "indrecc" %>
 			<% elsif current_user.pre_training_reviews.first %>
-				<%= link_to "Next", edit_pre_training_review_path(current_user.pre_training_reviews.first), :class => "pull-right btn btn-primary", id: "indrecc" %>
+				<%= link_to "Start Now", edit_pre_training_review_path(current_user.pre_training_reviews.first), :class => "pull-right btn btn-primary", id: "indrecc" %>
 			<% end %>
 		</div>
 	</div>

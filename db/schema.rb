@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705083047) do
+ActiveRecord::Schema.define(version: 20150713024304) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "property_name", limit: 255
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20150705083047) do
     t.datetime "updated_at",                                  null: false
     t.integer  "user_id",                         limit: 4
     t.integer  "course_category_id",              limit: 4
+    t.boolean  "completed_qualification_status",  limit: 1
   end
 
   add_index "enrolments", ["address_id"], name: "index_enrolments_on_address_id", using: :btree
@@ -204,22 +205,23 @@ ActiveRecord::Schema.define(version: 20150705083047) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "title",         limit: 255
-    t.string   "surname",       limit: 255
-    t.string   "firstname",     limit: 255
-    t.string   "middlename",    limit: 255
+    t.string   "title",             limit: 255
+    t.string   "surname",           limit: 255
+    t.string   "firstname",         limit: 255
+    t.string   "middlename",        limit: 255
     t.date     "dob"
-    t.string   "home_phone",    limit: 255
-    t.string   "mobile",        limit: 255
-    t.string   "email",         limit: 255
-    t.string   "city_of_birth", limit: 255
-    t.string   "usi",           limit: 255
-    t.string   "disabiltiy",    limit: 255
-    t.string   "aus_citizen",   limit: 255
-    t.string   "study_reason",  limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.boolean  "have_usi",      limit: 1
+    t.string   "home_phone",        limit: 255
+    t.string   "mobile",            limit: 255
+    t.string   "email",             limit: 255
+    t.string   "city_of_birth",     limit: 255
+    t.string   "usi",               limit: 255
+    t.string   "disabiltiy",        limit: 255
+    t.string   "aus_citizen",       limit: 255
+    t.string   "study_reason",      limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "have_usi",          limit: 1
+    t.boolean  "disability_status", limit: 1
   end
 
   create_table "tests", force: :cascade do |t|
