@@ -4,23 +4,23 @@
 		  <ul class="checkout-bar">
 
 		    <li class="visited first">
-		      
+
 		      <%= link_to "Login", root_path %>
 		    </li>
-		   
-		    <li class="visited"><%= link_to "Pre Enrolment", pre_enrolment_path %></li>
-		    
-		    <li class="visited"><%= link_to "Pre Training Review", edit_pre_training_review_path(current_user.pre_training_reviews.first) %></li>
-		    
-		    <li class="visited "><%= link_to "Enrolment", pre_enrolment_path  %></li>
-		    
-		    <li class="active"><%= link_to "LLN", lln_test_path %></li>
-		    
-		    <li class="next" ><%= link_to "Ids",  ids_path%></li>
-		    
-		    <li class=><%= link_to "Course Review", course_review_path  %></li>
 
-		    <li class=><%= link_to "Review", review_path %></li>     
+		    <li class="visited"><%= link_to "Pre Enrolment", "#" %></li>
+
+		    <li class="visited"><%= link_to "Pre Training Review", "#" %></li>
+
+		    <li class="visited "><%= link_to "Enrolment", "#"  %></li>
+
+		    <li class="active"><%= link_to "LLN", "#" %></li>
+
+		    <li class="next" ><%= link_to "Ids",  "#"%></li>
+
+		    <li class=><%= link_to "Course Review", "#"  %></li>
+
+		    <li class=><%= link_to "Review", "#" %></li>
 		  </ul>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 		</p>
 		<h1>LLN Test</h1>
 
-		<%= link_to 'Sign up LLN Test Account', "http://learn.tmg.edu.au/login/signup.php?", class: "btn btn-primary", target: '_blank'%> 
+		<%= link_to 'Sign up LLN Test Account', "http://learn.tmg.edu.au/login/signup.php?", class: "btn btn-primary", target: '_blank'%>
 
 		<%= link_to 'Undertake LLN Test', 'http://learn.tmg.edu.au/course/view.php?id=20', class: "btn btn-primary", target: '_blank'%>
 	</div>
@@ -46,7 +46,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="control-actions">
-			<%= link_to 'Back', edit_enrolment_path(current_user.enrolments.first), class: 'btn btn-primary pull-left' %> 
+			<%= link_to 'Back', edit_enrolment_path(current_user.enrolments.first), class: 'btn btn-primary pull-left' %>
 		 	<%= link_to 'Next', enrolment_student_ids_path(current_user.enrolments.first), class: 'btn btn-primary pull-right' %>
 		</div>
 	</div>

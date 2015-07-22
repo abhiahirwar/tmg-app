@@ -45,17 +45,33 @@ module ApplicationHelper
 		step
 	end
 
-	 def bootstrap_class_for flash_type
+	def bootstrap_class_for flash_type
     { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }[flash_type] || flash_type.to_s
   end
- 
+
   def flash_messages(opts = {})
     flash.each do |msg_type, message|
-      concat(content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)} fade in") do 
+      concat(content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)} fade in") do
               concat content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
-              concat message 
+              concat message
             end)
     end
     nil
+  end
+
+  def form_field(field_label, field_value ='',options={})
+    content_tag :div, class: "form-field" do
+      content_tag(:div, field_label, class: "field-label") +
+      content_tag(:div, field_value.try(:humanize), class: "field-value")
+    end
+  end
+
+  def form_two_fields(field_label1, field_label2,field_value1='', field_value2='',options={})
+    content_tag :div, class: "form-fields" do
+      content_tag(:div, field_label1, class: "field-label1") +
+      content_tag(:div, field_value1.try(:humanize), class: "field-value1") +
+      content_tag(:div, field_label2, class: "field-label2") +
+      content_tag(:div, field_value2.try(:humanize), class: "field-value2")
+    end
   end
 end

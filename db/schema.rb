@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713024304) do
+ActiveRecord::Schema.define(version: 20150720071818) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "property_name", limit: 255
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150713024304) do
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
     t.string   "course_review_document", limit: 255
+    t.string   "web_link",               limit: 255
   end
 
   add_index "courses", ["course_category_id"], name: "index_courses_on_course_category_id", using: :btree
@@ -152,6 +153,7 @@ ActiveRecord::Schema.define(version: 20150713024304) do
     t.string   "english_level", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "aboriginal",    limit: 255
   end
 
   create_table "pre_training_reviews", force: :cascade do |t|
@@ -215,7 +217,7 @@ ActiveRecord::Schema.define(version: 20150713024304) do
     t.string   "email",             limit: 255
     t.string   "city_of_birth",     limit: 255
     t.string   "usi",               limit: 255
-    t.string   "disabiltiy",        limit: 255
+    t.string   "disability",        limit: 255
     t.string   "aus_citizen",       limit: 255
     t.string   "study_reason",      limit: 255
     t.datetime "created_at",                    null: false

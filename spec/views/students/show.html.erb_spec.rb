@@ -12,7 +12,7 @@ RSpec.describe "students/show", type: :view do
       :email => "Email",
       :city_of_birth => "City Of Birth",
       :usi => "Usi",
-      :disabiltiy => "Disabiltiy",
+      :disability => "Disability",
       :aus_citizen => "Aus Citizen",
       :study_reason => "Study Reason"
     ))
@@ -29,7 +29,7 @@ RSpec.describe "students/show", type: :view do
     expect(rendered).to match(/Email/)
     expect(rendered).to match(/City Of Birth/)
     expect(rendered).to match(/Usi/)
-    expect(rendered).to match(/Disabiltiy/)
+    expect(rendered).to match(/Disability/)
     expect(rendered).to match(/Aus Citizen/)
     expect(rendered).to match(/Study Reason/)
   end

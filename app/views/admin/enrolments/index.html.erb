@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Enrolments</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User Email</th>
+      <th>Course</th>
+      <th>Student</th>
+      <th>Address</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrolments.each do |enrolment| %>
+      <tr>
+        <td><%= enrolment.try(:user).try(:email) %></td>
+        <td><%= enrolment.try(:course).try(:name) %></td>
+        <td><%= enrolment.try(:student).try(:fullname) %></td>
+        <td><%= enrolment.try(:address).try(:full_address) %></td>
+
+        <td><%= link_to 'Show', [:admin, enrolment] %></td>
+        <td><%= link_to 'Edit', edit_admin_enrolment_path(enrolment) %></td>
+        <td><%= link_to 'Destroy', [:admin, enrolment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Submit", {:controller => "enrolments", :action => "send_enrolment_mail", :id => current_user.try(:enrolments).try(:first).try(:id)} ,{:class => "btn btn-primary pull-right"}%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

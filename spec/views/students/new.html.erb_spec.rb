@@ -12,7 +12,7 @@ RSpec.describe "students/new", type: :view do
       :email => "MyString",
       :city_of_birth => "MyString",
       :usi => "MyString",
-      :disabiltiy => "MyString",
+      :disability => "MyString",
       :aus_citizen => "MyString",
       :study_reason => "MyString"
     ))
@@ -41,7 +41,7 @@ RSpec.describe "students/new", type: :view do
 
       assert_select "input#student_usi[name=?]", "student[usi]"
 
-      assert_select "input#student_disabiltiy[name=?]", "student[disabiltiy]"
+      assert_select "input#student_disability[name=?]", "student[disability]"
 
       assert_select "input#student_aus_citizen[name=?]", "student[aus_citizen]"
 

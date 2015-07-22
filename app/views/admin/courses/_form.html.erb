@@ -16,9 +16,11 @@
   <%= f.text_field :code %>
 
   <%= f.select(:course_category_id, course_categories_for_select, :prompt => 'Select') %>
- 
+
   <%= f.text_field :course_review_document, label: "Course review document URL"%>
- 
+
+  <%= f.text_field :web_link %>
+
   <%= f.text_field :delivery_mode %>
 
   <%= f.text_field :fee_for_service %>

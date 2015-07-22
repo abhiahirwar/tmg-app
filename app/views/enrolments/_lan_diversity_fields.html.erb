@@ -1,20 +1,25 @@
 <div class="ques">
-	5. Language cultural diversity 
+	5. Language cultural diversity
 </div>
 <div class="row">
 	<div class="col-sm-6">
-		
+
   	<%= f.text_field :birth_country, label: 'In which country were you born?' %>
 	</div>
 	<div class="col-sm-6">
   	<%= f.text_field :home_language, label: 'Do you speak a language other than English at home?' %>
 	</div>
 	<div class="col-sm-6">
-  	<%= f.text_field :english_level, label: 'How well do you speak English? ' %>
+  	<%= f.select :english_level, ["Very Well", "Well", "Not Well", "Not at all"], label: 'How well do you speak English? ' %>
 	</div>
 </div>
+<div class="row">
+  <div class="col-sm-6">
+    <%= f.select :aboriginal, ["No", "Yes, Aboriginal",  "Yes, Torres Strait Islander", "Yes Both"], label: "Are you of Aboriginal or Torres Strait Islander origin?" %>
+  </div>
+</div>
 
- 
- 
- 
- 
+
+
+
+

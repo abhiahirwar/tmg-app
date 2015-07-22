@@ -10,7 +10,7 @@ mobile "MyString"
 email "MyString"
 city_of_birth "MyString"
 usi "MyString"
-disabiltiy "MyString"
+disability "MyString"
 aus_citizen "MyString"
 study_reason "MyString"
   end

@@ -1,0 +1,23 @@
+<div id="field-details">
+
+  <h1>Pre Training Review Details</h1>
+
+  <%= form_field("Rpl", pre_training_review.try(:rpl)) %>
+
+  <%= form_field("Credit transfer", pre_training_review.try(:credit_transfer)) %>
+
+  <%= form_field("Area of work", pre_training_review.try(:area_of_work)) %>
+
+  <%= form_field("Employment", pre_training_review.try(:employment)) %>
+
+  <%= form_field("Pathway", pre_training_review.try(:pathway)) %>
+
+  <%= form_field("Preferred learning style", pre_training_review.try(:preferred_learning_style)) %>
+
+  <%= form_field("Preferred Delivery mode", pre_training_review.try(:delivery_mode)) %>
+
+  <%= form_field("Special condition", pre_training_review.try(:speical_condition)) %>
+
+  <%= form_field("Term of condition Signed", pre_training_review.try(:toc) ? "Yes" : "No") %>
+
+</div>

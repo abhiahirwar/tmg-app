@@ -23,4 +23,7 @@ class StaticPagesController < ApplicationController
 
 	def success
 	end
+
+	def enrolment_form
+	end
 end

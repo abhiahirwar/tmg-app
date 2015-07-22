@@ -1,11 +1,20 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 	<div class="container">
-		<%= link_to "TMG", root_path, id: "logo" %>
+		<%= link_to "", root_path, id: "logo" %>
 		<nav>
-			<ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Home", root_path %></li>
+			<ul class="nav navbar-nav navbar-right top-nav">
+
 
         <% if user_signed_in? %>
+          <% if current_user.role?("superadmin") %>
+            <li><%= link_to "Home", admin_dashboards_path %></li>
+            <li><%= link_to "Courses", admin_courses_path %></li>
+            <li><%= link_to "Course Categories", admin_course_categories_path %></li>
+            <li><%= link_to "Users", admin_users_path %></li>
+            <li><%= link_to "Enrolments", admin_enrolments_path %></li>
+          <% else %>
+            <li><%= link_to "Home", root_path %></li>
+          <% end %>
 
           <li >
             <%= link_to "Log out", destroy_user_session_path , method: "delete" %>

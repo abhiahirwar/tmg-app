@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   resources :course_categories
 
-  # resources :courses
+  resources :courses
 
   resources :pre_training_reviews
 
@@ -48,15 +48,20 @@ Rails.application.routes.draw do
   get   'review'  =>  'static_pages#review'
   get   'success' => 'static_pages#success'
   get   'course-review' => 'static_pages#course_review'
+  get   'enrolment_form' => 'static_pages#enrolment_form'
   get   :send_enrolment_mail, to: 'enrolments#send_enrolment_mail', as: :send_enrolment_mail
   devise_for :users,:path => '', path_names: {sign_in: "login", sign_out: "logout"}, controllers: { registrations: "registrations" }
-  
+
   namespace :admin do
 	  resources :forms
 	  resources :questions
 	  resources :answers
-    resources :users
+    resources :users do
+      resources :enrolments
+    end
     resources :courses
     resources :course_categories
+    resources :enrolments
+    resources :dashboards, path: 'dashboard'
 	end
 end

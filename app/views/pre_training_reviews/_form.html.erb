@@ -14,7 +14,7 @@
 
     <div class="field">
       <div class="ques">
-        Recognition of Prior Learning (RPL) 
+        Recognition of Prior Learning (RPL)
         <!-- Button trigger modal -->
         <span class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#myModal">
         </span>
@@ -50,27 +50,27 @@
         </p>
       </div>
     </div>
-     
+
     <%= f.text_field :rpl %>
     <%= f.text_area :credit_transfer,label: "2. Credit Transfer", help: 'After reviewing the course outline, please list the units for which you can provide a copy of a statement of attainment/ or certificate.' %>
-   
-    
-     
+
+
+
     <%= f.text_field :area_of_work %>
-    
+
     <%= f.text_field :employment %>
-   
+
     <%= f.text_field :pathway %>
-    
+
     <%= f.form_group :preferred_learning_style, label: { text: "6. What is your preferred learning style?" } do %>
       <%= f.radio_button :preferred_learning_style, 'visual', label: "Visual learners (visual input and tend to remember things better if the information is organised and presented visually e.g. images, charts and flow diagrams)", checked: true %>
       <%= f.radio_button :preferred_learning_style, 'Auditory', label: "Auditory learners (auditory input and remember things best when they hear them)" %>
       <%= f.radio_button :preferred_learning_style, 'Kinaesthetic', label: "Kinaesthetic learners (input that is physical and concrete. Require action and movement to learn things, and need to do something to remember it)" %>
-      
+
     <% end %>
-    
-    <%= f.select :delivery_mode, ['Distance', 'Workplace', 'Blended Mode', 'Salon', 'Training Venue', 'Online'] %>
-    
+
+    <%= f.select :delivery_mode, ['Distance', 'Workplace', 'Blended Mode', 'Salon', 'Training Venue', 'Online'], label: "Preferred Delivery Mode" %>
+
     <%= f.text_field :special_condition, help:"For example, physical injuries or a language barrier etc." %>
 
     <%= f.check_box :toc %>

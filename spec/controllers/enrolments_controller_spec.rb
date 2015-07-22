@@ -19,6 +19,13 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe EnrolmentsController, type: :controller do
+  # login_admin
+  before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      user = FactoryGirl.create(:student_user)
+      user.confirm! # or set a confirmed_at inside the factory. Only necessary if you are using the "confirmable" module
+      sign_in user
+    end
 
   # This should return the minimal set of attributes required to create a valid
   # Enrolment. As you add validations to Enrolment, be sure to
@@ -35,11 +42,12 @@ RSpec.describe EnrolmentsController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # EnrolmentsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  let(:enrolment) {FactoryGirl.create(:enrolment)}
 
   describe "GET #index" do
     it "assigns all enrolments as @enrolments" do
-      enrolment = Enrolment.create! valid_attributes
-      get :index, {}, valid_session
+      # enrolment = Enrolment.create! valid_attributes
+      get :index
       expect(assigns(:enrolments)).to eq([enrolment])
     end
   end
@@ -54,7 +62,7 @@ RSpec.describe EnrolmentsController, type: :controller do
 
   describe "GET #new" do
     it "assigns a new enrolment as @enrolment" do
-      get :new, {}, valid_session
+      get :new, {}
       expect(assigns(:enrolment)).to be_a_new(Enrolment)
     end
   end

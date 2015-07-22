@@ -1,54 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div id="field-details">
 
-<p>
-  <strong>Rpl:</strong>
-  <%= @pre_training_review.rpl %>
-</p>
+  <h1>Pre Training Review Details</h1>
 
-<p>
-  <strong>Credit transfer:</strong>
-  <%= @pre_training_review.credit_transfer %>
-</p>
+  <%= form_field("Rpl", @pre_training_review.try(:rpl)) %>
 
-<p>
-  <strong>Area of work:</strong>
-  <%= @pre_training_review.area_of_work %>
-</p>
+  <%= form_field("Credit transfer", @pre_training_review.try(:credit_transfer)) %>
 
-<p>
-  <strong>Employment:</strong>
-  <%= @pre_training_review.employment %>
-</p>
+  <%= form_field("Area of work", @pre_training_review.try(:area_of_work)) %>
 
-<p>
-  <strong>Pathway:</strong>
-  <%= @pre_training_review.pathway %>
-</p>
+  <%= form_field("Employment", @pre_training_review.try(:employment)) %>
 
-<p>
-  <strong>Preferred learning style:</strong>
-  <%= @pre_training_review.preferred_learning_style %>
-</p>
+  <%= form_field("Pathway", @pre_training_review.try(:pathway)) %>
 
-<p>
-  <strong>Delivery mode:</strong>
-  <%= @pre_training_review.delivery_mode %>
-</p>
+  <%= form_field("Preferred learning style", @pre_training_review.try(:preferred_learning_style)) %>
 
-<p>
-  <strong>Speical condition:</strong>
-  <%= @pre_training_review.speical_condition %>
-</p>
+  <%= form_field("Preferred Delivery mode", @pre_training_review.try(:delivery_mode)) %>
 
-<p>
-  <strong>Toc:</strong>
-  <%= @pre_training_review.toc %>
-</p>
+  <%= form_field("Speical condition", @pre_training_review.try(:speical_condition)) %>
 
-<p>
-  <strong>User:</strong>
-  <%= @pre_training_review.user.try(:email) %>
-</p>
+  <%= form_field("Term of condition Signed", @pre_training_review.try(:toc) ? "Yes" : "No") %>
+
+</div>
 
 <%= link_to 'Edit', edit_pre_training_review_path(@pre_training_review) %> |
 <%= link_to 'Back', pre_training_reviews_path %>

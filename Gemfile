@@ -49,6 +49,11 @@ gem 'nprogress-rails'
 
 gem 'exception_notification'
 
+gem "font-awesome-rails"
+
+gem 'premailer-rails'
+
+
 # gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -80,6 +85,8 @@ group :development, :test do
   gem 'factory_girl'
 
   gem 'factory_girl_rails'
+
+  gem "letter_opener"
 end
 
 group :test do

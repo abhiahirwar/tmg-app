@@ -7,8 +7,10 @@
     </p>
   </div>
 </div>
-<%= f.fields_for :student, @student do |s| -%>
-  <div class="col-sm-2"><%= s.radio_button :disability_status, false, label: 'No'%></div>
-  <div class="col-sm-2"><%= s.radio_button :disability_status, true, label: "Yes" %></div>
-  <div class="col-sm-8"><%= s.text_field :disabiltiy, label: "If Yes Please indicate" %></div>
-<% end -%>
+<div class="row">
+  <%= f.fields_for :student, @student do |s| -%>
+    <div class="col-sm-2"><%= s.radio_button :disability_status, false, label: 'No'%></div>
+    <div class="col-sm-2"><%= s.radio_button :disability_status, true, label: "Yes" %></div>
+    <div class="col-sm-8"><%= s.text_field :disability, label: "If Yes Please indicate" %></div>
+  <% end -%>
+</div>

@@ -1,0 +1,14 @@
+<div class="ques">
+  6. Disability
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <p>Do you consider yourself to have a disability, impairment or long term condition?
+    </p>
+  </div>
+</div>
+<%= f.fields_for :student, @student do |s| -%>
+  <div class="col-sm-2"><%= s.radio_button :disability_status, false, label: 'No'%></div>
+  <div class="col-sm-2"><%= s.radio_button :disability_status, true, label: "Yes" %></div>
+  <div class="col-sm-8"><%= s.text_field :disability, label: "If Yes Please indicate" %></div>
+<% end -%>

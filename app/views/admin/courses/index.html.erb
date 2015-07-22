@@ -2,7 +2,7 @@
 
 <h1>Listing Courses</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -12,12 +12,11 @@
       <th>Vet fee</th>
       <th>Gov funded</th>
       <th>Concession gov funded</th>
-      <th>Material cost</th>
-      <th>Transfer fee</th>
-      <th>Re issue certificate</th>
       <th>Delivery mode</th>
       <th>Location of delivery</th>
       <th>Study duration</th>
+      <th>Course review document URL</th>
+      <th>Web Url</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -32,12 +31,11 @@
         <td><%= course.vet_fee %></td>
         <td><%= course.gov_funded %></td>
         <td><%= course.concession_gov_funded %></td>
-        <td><%= course.material_cost %></td>
-        <td><%= course.transfer_fee %></td>
-        <td><%= course.re_issue_certificate %></td>
         <td><%= course.delivery_mode %></td>
         <td><%= course.location_of_delivery %></td>
         <td><%= course.study_duration %></td>
+        <td><%= link_to "Review Document", course.course_review_document, target: "_blank" %></td>
+        <td><%= link_to "Web Link", course.web_link, target: "_blank" %></td>
         <td><%= link_to 'Show', [:admin, course] %></td>
         <td><%= link_to 'Edit', edit_admin_course_path(course) %></td>
         <td><%= link_to 'Destroy',[:admin, course], method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -69,6 +69,10 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  background-image: image-url("/assets/tmg-logo-01.png");
+  height: 80px;
+  width: 120px;
+  background-color: #fff;
   &:hover {
     color: white;
     text-decoration: none;

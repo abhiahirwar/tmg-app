@@ -1,4 +1,5 @@
 class Admin::CourseCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_course_category, only: [:show, :edit, :update, :destroy]
 
   # GET /course_categories

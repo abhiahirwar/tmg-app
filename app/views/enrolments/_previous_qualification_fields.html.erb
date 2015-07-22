@@ -16,9 +16,11 @@
     </ul>
   </div>
   <div class="col-sm-6">
-  <div class="col-sm-6"><%= f.radio_button :completed_qualification_status, false, label: 'No' %></div>
-  <div class="col-sm-6"><%= f.radio_button :completed_qualification_status, true, label: 'Yes' %></div>
-  <div class="col-sm-6"><%= f.text_field :completed_qualification, label: "If Yes Please indicate" %></div>
-    <div class="col-sm-6"><%= f.text_field :qualification_received_location, label: 'Where' %></div>
+    <div class="col-sm-6"><%= f.radio_button :completed_qualification_status, false, label: 'No' %></div>
+    <div class="col-sm-6"><%= f.radio_button :completed_qualification_status, true, label: 'Yes' %></div>
+    <div class="qual-group">
+      <div class="col-sm-6"><%= f.text_field :completed_qualification, label: "If Yes Please indicate" %></div>
+        <div class="col-sm-6"><%= f.text_field :qualification_received_location, label: 'Where and Year' %></div>
+    </div>
   </div>
 </div>

@@ -13,7 +13,7 @@ RSpec.describe "students/index", type: :view do
         :email => "Email",
         :city_of_birth => "City Of Birth",
         :usi => "Usi",
-        :disabiltiy => "Disabiltiy",
+        :disability => "Disability",
         :aus_citizen => "Aus Citizen",
         :study_reason => "Study Reason"
       ),
@@ -27,7 +27,7 @@ RSpec.describe "students/index", type: :view do
         :email => "Email",
         :city_of_birth => "City Of Birth",
         :usi => "Usi",
-        :disabiltiy => "Disabiltiy",
+        :disability => "Disability",
         :aus_citizen => "Aus Citizen",
         :study_reason => "Study Reason"
       )
@@ -45,7 +45,7 @@ RSpec.describe "students/index", type: :view do
     assert_select "tr>td", :text => "Email".to_s, :count => 2
     assert_select "tr>td", :text => "City Of Birth".to_s, :count => 2
     assert_select "tr>td", :text => "Usi".to_s, :count => 2
-    assert_select "tr>td", :text => "Disabiltiy".to_s, :count => 2
+    assert_select "tr>td", :text => "Disability".to_s, :count => 2
     assert_select "tr>td", :text => "Aus Citizen".to_s, :count => 2
     assert_select "tr>td", :text => "Study Reason".to_s, :count => 2
   end

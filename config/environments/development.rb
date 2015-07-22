@@ -36,10 +36,12 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.active_record.raise_in_transactional_callbacks = true
 
+  # config.action_mailer.delivery_method = :letter_opener
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
-  
+
   ENV["GMAIL_USERNAME"] = 'tmgit@tmg.edu.au'
   ENV["GMAIL_PASSWORD"] = 'Tmg$$Routers6'
 
@@ -57,6 +59,9 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }
-
-
+  config.action_mailer.default_url_options = {
+    :host => "localhost",
+    :port => 3000
+  }
+  config.action_mailer.default_options = { from: "no-reply@tmg.edu.au" }
 end

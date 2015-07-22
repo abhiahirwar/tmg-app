@@ -1,74 +1,48 @@
 <p id="notice"><%= notice %></p>
+<div id="field-details">
+<%= form_field("Name:",@course.name )%>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
 
-<p>
-  <strong>Code:</strong>
-  <%= @course.code %>
-</p>
+<%= form_field("Code:",@course.code )%>
 
-<p>
-  <strong>Course category:</strong>
-  <%= @course.try(:course_category).try(:title) %>
-</p>
 
-<p>
-  <strong>Course Review Document Link : </strong>
-  <%= link_to "Course Review Document", @course.course_review_document, target: "_blank" %>
-</p>
+<%= form_field("Course category:",@course.try(:course_category).try(:title) )%>
 
-<p>
-  <strong>Fee for service:</strong>
-  <%= @course.fee_for_service %>
-</p>
 
-<p>
-  <strong>Vet fee:</strong>
-  <%= @course.vet_fee %>
-</p>
+<%= form_field("Course Review Document Link ",  @course.course_review_document)%>
 
-<p>
-  <strong>Gov funded:</strong>
-  <%= @course.gov_funded %>
-</p>
+<%= form_field("Course Link ",  @course.web_link)%>
 
-<p>
-  <strong>Concession gov funded:</strong>
-  <%= @course.concession_gov_funded %>
-</p>
 
-<p>
-  <strong>Material cost:</strong>
-  <%= @course.material_cost %>
-</p>
+<%= form_field("Fee for service:", @course.fee_for_service )%>
 
-<p>
-  <strong>Transfer fee:</strong>
-  <%= @course.transfer_fee %>
-</p>
 
-<p>
-  <strong>Re issue certificate:</strong>
-  <%= @course.re_issue_certificate %>
-</p>
+<%= form_field("Vet fee:",@course.vet_fee )%>
 
-<p>
-  <strong>Delivery mode:</strong>
-  <%= @course.delivery_mode %>
-</p>
 
-<p>
-  <strong>Location of delivery:</strong>
-  <%= @course.location_of_delivery %>
-</p>
+<%= form_field("Gov funded:",@course.gov_funded )%>
 
-<p>
-  <strong>Study duration:</strong>
-  <%= @course.study_duration %>
-</p>
 
+<%= form_field("Concession gov funded:",@course.concession_gov_funded )%>
+
+
+<%= form_field("Material cost:",@course.material_cost )%>
+
+
+<%= form_field("Transfer fee:",@course.transfer_fee )%>
+
+
+<%= form_field("Re issue certificate:",@course.re_issue_certificate )%>
+
+
+<%= form_field("Delivery mode:",@course.delivery_mode )%>
+
+
+<%= form_field("Location of delivery:",@course.location_of_delivery )%>
+
+
+<%= form_field("Study duration:",@course.study_duration )%>
+
+</div>
 <%= link_to 'Edit', edit_admin_course_path(@course) %> |
 <%= link_to 'Back', admin_courses_path %>

@@ -2,18 +2,39 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css" media="screen">
+      #field-details { width:210mm; }
+      #field-details h1 { font-size: 30px; font-weight: bold; margin-bottom: 5px;}
+      #field-details h2 { font-size: 20px; font-weight: bold; color: #222; border-bottom: 2px solid #222; margin-bottom: 10px;}
+      #field-details h3 { font-size: 16px; font-weight: bold; color: #222;}
+      #field-details p { line-height: 1.2em; font-size: 14px; margin-bottom: 5px;}
+      #field-details hr { border-top: 2px solid #222;  } #field-details .page-break { display:none; }
+      #field-details .form-field { border-bottom: 1px solid #222; display: table; margin-bottom: 5px; padding-bottom: 5px; width: 100%; }
+      #field-details .form-field .field-label {   width: 50%;   display: table-cell;   font-weight: bold;   padding-left: 5px; }
+      #field-details .form-field .field-value {   display: table-cell; }
+      #field-details .form-fields { border-bottom: 1px solid #222; display: table; width: 100%;margin-bottom: 5px; padding-bottom: 5px; }
+      #field-details .form-fields .field-label1 { width: 25%; display: table-cell; font-weight: bold; padding-left: 5px; }
+      #field-details .form-fields .field-value1 { display: table-cell; width: 25%; }
+      #field-details .form-fields .field-label2 { display: table-cell; width: 25%; font-weight: bold; padding-left: 5px; }
+      #field-details .form-fields .field-value2 { display: table-cell; width: 25%; }
+    </style>
+    <style type="text/css" media="print">
+      @page {
+      size: A4;
+      margin: 0; }
+    </style>
   </head>
   <body>
-    <h1>Welcome to tmg.edu.au , <%= @user.email %></h1>
+    <strong>Hello <%= @enrolment.try(:student).try(:fullname) %></strong>
     <p>
       You have successfully submitted online enrolment.
       your username is: <%= @user.email %>.<br>
     </p>
-    <%= render 'static_pages/application_information/pre_training_review_info', :pre_training_review => @user.pre_training_reviews.first %>
-    <%= render 'static_pages/application_information/enrolment', :enrolment => @enrolment %>
+    <%= render 'pre_training_review_details', :pre_training_review => @user.pre_training_reviews.first %>
+    <%= render 'enrolment_details', :enrolment => @enrolment %>
     <%= render 'static_pages/application_information/student_ids', :enrolment => @enrolment %>
     <p>
-      To login to the enrolment app, just follow this link: <%= root_path %>.
+      To login to the enrolment app, just follow this link: <%= link_to "Tmg Enrolment",url_for(host: "localhost",controller: "static_pages", action: "home") %>.
     </p>
     <p>Thanks and have a great day!</p>
   </body>

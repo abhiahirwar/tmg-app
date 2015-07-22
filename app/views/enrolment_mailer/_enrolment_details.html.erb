@@ -1,0 +1,196 @@
+<div id="field-details">
+  <h1>Enrolment Summary</h1>
+  <p>Enrolment details submited by online enrolment.</p>
+
+  <h2>1. ENROLMENT DETAILS</h2>
+
+  <%= form_field("Course Code", enrolment.try(:course).try(:code)) %>
+  <%= form_field("Title of Course/Qualification", enrolment.try(:course).try(:name)) %>
+  <%= form_field("Office use : Delivery Mode", enrolment.try(:delivery_mode)) %>
+
+  <% student = enrolment.try(:student) %>
+  <h2>2. CLIENT PERSONAL DETAILS</h2>
+  <%= form_two_fields("Title","Sex",student.title) %>
+  <%= form_two_fields("Surname ","Given Name", student.surname, student.firstname)%>
+  <%= form_two_fields("Middle Name ", "Date of Birth", student.middlename, student.dob) %>
+  <%= form_two_fields("Home Phone Mobile","Email", student.home_phone, student.email) %>
+
+  <h3>What is the address location and postcode of the suburb, locality or town in which you usually live?</h3>
+
+  <p>Please provide the physical address (street number and name not post office box) where you usually reside rather than any temporary address at which you reside for training, work or other purposes before returning to your home.</p>
+
+  <p>If you are from a rural area use the address from your state or territory’s ‘rural property addressing’ or ‘numbering’ system as your residential street address.</p>
+  <hr>
+  <% address = enrolment.try(:address) %>
+  <%= form_field("Building/ Property name",  address.property_name) %>
+
+  <%= form_two_fields("Street 1", "Street 2", address.street1, address.street2) %>
+
+  <%= form_two_fields("Suburb, locality or town",  "Postcode", address.suburb, address.postcode) %>
+
+  <%= form_two_fields("State/Territory", "Country", address.state, address.country) %>
+
+  <h2>3. WORKPLACE EMPLOYER DETAILS (if applicable)</h2>
+  <% employer = enrolment.try(:employer) %>
+  <%= form_field("Trading Name", employer.try(:trading_name)) %>
+
+  <%= form_two_fields("Contact Name", "Supervisor Name", employer.try(:contact_name), employer.try(:supervisor_name))%>
+
+  <%= form_field("Training Address", employer.try(:training_address)) %>
+
+  <%= form_two_fields("Phone","Fax", employer.try(:phone), employer.try(:fax)) %>
+
+  <%= form_two_fields("Employer email", "ABN", employer.try(:email), employer.try(:abn)) %>
+
+  <div class="page-break"></div>
+
+  <h2>4. EMERGENCY CONTACT DETAILS (Please list at least one contact)</h2>
+  <% emergency_contact = enrolment.try(:emergency_contact) %>
+  <% emergency_contact1 = enrolment.try(:emergency_contact1) %>
+  <%= form_two_fields("Contact Name 1", "Relationship to student", emergency_contact.try(:contact_name), emergency_contact.try(:relationship)) %>
+
+  <%= form_two_fields("Home Phone", "Mobile", emergency_contact.try(:home_phone), emergency_contact.try(:mobile)) %>
+
+  <%= form_two_fields("Contact Name 2", "Relationship to student", emergency_contact1.try(:contact_name), emergency_contact1.try(:relationship)) %>
+
+  <%= form_two_fields("Home Phone", "Mobile",emergency_contact1.try(:home_phone),emergency_contact1.try(:mobile)) %>
+
+  <h2>5. LANGUAGE CULTURAL DIVERSITY</h2>
+  <% language_culture_diversity = enrolment.try(:language_culture_diversity) %>
+  <%= form_field("In which country were you born?", language_culture_diversity.try(:birth_country)) %>
+
+  <%= form_field("Do you speak a language other than English at home?", language_culture_diversity.try(:home_language)) %>
+
+  <%= form_field("How well do you speak English?", language_culture_diversity.try(:english_level)) %>
+
+  <%= form_field("Are you of Aboriginal or Torres Strait Islander origin?", language_culture_diversity.try(:aboriginal)) %>
+
+  <h2>6. DISABILITY</h2>
+  <% disability_status = student.disability_status ? "Yes" : "No"%>
+   <%= form_field("Do you consider yourself to have a disability, impairment or long-term condition? ", disability_status) %>
+  <% if !student.try(:disability).try(:blank?) %>
+    <%= form_field("Disabilities ", student.try(:disability))%>
+  <% end %>
+
+  <h2>7. SCHOOLING</h2>
+  <% school = enrolment.try(:school) %>
+  <%= form_field("What is your highest COMPLETED school level?", school.try(:highest_school_level)) %>
+
+  <%= form_field("In which YEAR did you complete that school level?", school.try(:year)) %>
+
+  <%= form_field("Are you still attending secondary school?", school.try(:secondary_school)) %>
+
+  <h2>8. PREVIOUS QUALIFICATIONS RECEIVED</h2>
+
+  <%= form_field("SUCCESSFULLY completed qualifications", enrolment.try(:completed_qualification)) %>
+
+  <%= form_field("Year highest qualification achieved and Where", enrolment.try(:qualification_received_location)) %>
+
+  <h2>9. EMPLOYMENT</h2>
+  <% employment = enrolment.try(:employment) %>
+  <%= form_field("BEST describes your current employment status?", employment.try(:employment_status) ) %>
+
+  <%= form_field("BEST describes your current or recent occupation?", employment.try(:recent_occupation)) %>
+
+  <%= form_field("BEST describes the Industry of your current or previous employer?", employment.try(:industry)) %>
+
+  <h2>10. STUDY REASON</h2>
+
+  <%= form_field("BEST describes your main reason for undertaking this course/traineeship/
+  apprenticeship?", student.try(:study_reason)) %>
+
+  <h2>11. AUSTRALIAN CITIZEN / PERMANENT RESIDENT</h2>
+
+  <%= form_field("Are you an Australian Permanent Resident/Citizen/New Zealand Citizen?", student.try(:aus_citizen)) %>
+
+  <h2>12. VICTORIAN STUDENT NUMBER (Victorian Students Only)</h2>
+
+  <p>To be completed by all students aged up to 24 years:<br>
+  Since 2009 in schools and since 2011 for vocational education and training (VET) organisations and Adult Community Education providers, a Victorian Student Number (VSN) has been allocated upon enrolment to each individual student up to 24 years.</p>
+
+  <p>Students should report their VSN on all subsequent enrolments at a Victorian school or training organisation. In particular, all students who are currently enrolled in either a VET provider or a Victorian school (including those already participating in a VET in schools program) should obtain their VSN from their current education or training organisation and report their VSN on this enrolment form. </p>
+
+  <p>Students who are enrolling for the first time since the VSN was introduced will get a new VSN.</p>
+  <hr>
+  <%vic_student = enrolment.try(:vic_student) %>
+  <%= form_field("Enter your Victorian Student Number (VSN)", vic_student.try(:vsn)) %>
+
+  <%= form_field("Victorian school attended", vic_student.try(:latest_school))%>
+
+  <%= form_field("List the most recent training organisations with which you have participated in training in Victoria since 2011 (List up to 3 training organisations)", vic_student.try(:previous_school)) %>
+
+  <h2>13. Unique Student Identifier (USI)</h2>
+
+  <p>A Unique Student Identifier (USI) is a reference number made up of numbers and letters that gives students access to their USI account. A USI will allow an individual’s USI account to be linked to the National Vocational Education and Training (VET) Data Collection allowing an individual to see all of their training results from all providers including all completed training units and qualifications. </p>
+
+  <p>It is a Government requirement that a student needs a USI when enrolling or re-enrolling in nationally recognised training from 1 January 2015. This includes if the student is enrolling for the first time, for example, if they are studying at TAFE or with a private training organisation, completing an apprenticeship or skill set, certificate or diploma course. It also applies to students continuing or completing (re-enrolling) training, including nationally recognised training undertaken in secondary school.</p>
+  <hr>
+  <%= form_field("Do you have an USI?", student.try(:have_usi) ? "Yes" : "No") %>
+
+  <%= form_field("USI", student.try(:usi)) %>
+
+  <p>I give The Malka Group Pty Ltd (TMG) permission to create, view and update a USI on my behalf. Using the personal details entered on the two forms of Identification I have provided TMG.</p>
+
+  <p>• Driver’s Licence • Australian Passport • Medicare Card</p>
+
+  <p>• Visa (with Non-Australian Passport) for international students • Birth Certificate (Australian)</p>
+
+  <p>• Certificate Of Registration By Descent • Citizenship Certificate • Immi Card</p>
+
+  <hr>
+  <%= form_field("Permission to create USI", student.try(:have_usi) ? "Yes" : "No") %>
+  <%= form_field("Enter your city of birth", student.try(:city_of_birth)) %>
+
+  <p>TMG will advise me of my USI when it has been provided. You should keep the USI handy and safe.</p>
+  <h2>14. VET FEE-Help Acknowledgement</h2>
+
+  <p>I,<%= student.try(:fullname) %> have read, completed and fully understand all the information contained in the request for VET FEE Help</p>
+
+  <p>Assistance Form and VET FEE-Help Information Booklet 2015 provided to me by The Malka Group Pty Ltd.</p>
+
+  <p>I acknowledge that it is my responsibility to ensure that I have sufficient VET FEE-HELP balance to cover the VET FEE-Help amounts applied for. I am aware that I am eligible for the amounts of VET FEE-Help assistance contained in this notice only if I have sufficient VET FEE-Help balance to cover those amounts.</p>
+
+  <p>I have provided proof of my eligibility for VET FEE-Help</p>
+  <hr>
+  <%= form_field("Acknowledge by accepting during form submit", enrolment.vet == 1 ? "Yes" : "No") %>
+
+  <h2>16. Student enrolment privacy notice</h2>
+
+  <p>I understand that:</p>
+  <ul>
+    <li>TMG is required to provide the Victorian Government, through the Department of Education and Early Childhood Development,with the student and training activity data which may include information I provide in this enrolment form. Information is required to be provided in accordance with the Victorian VET Student Statistical Collection Guidelines (which are available at http://www.education.vic.gov.au/training/providers/rto/Pages/datacollection.aspx).</li>
+
+    <li>The Department may use the information provided to it for planning, administration, policy development, program evaluation, resource allocation, and reporting and/or research activities. For these and other lawful purposes, the Department may also disclose information to its consultants, advisers, other government agencies, professional bodies and/or other organisations. I have been advised by the training organisation that I may be contacted and requested to participate in a National Centre for Vocational Education Research survey or a Department-endorsed project or audit or review.</li>
+
+    <li>The Education and Training Reform Act 2006 requires The Malka Group - TMG to collect and disclose my personal information for a number of purposes, including the allocation to me of a Victorian Student Number and updating my personal information on the Victorian Student Register.</li>
+
+    <li>I acknowledge that if I do not provide this information, TMG may not be able to register me in my selected course/unit. I also acknowledge that I have a right to access personal information which TMG hold about me, subject to exceptions in relevant privacy legislation. I understand that I can obtain further information about TMG in the Student Handbook.</li>
+
+    <li>I may receive an NCVER survey and/ or invitation to participate in a Victorian department endorsed project or be contacted by NCVER.</li>
+  </ul>
+
+  <p>For students eligible for VET FEE-HELP, the following privacy statement also applies:</p>
+
+  <p>TMG is collecting the information in this form for the purpose of assessing my eligibility for the Higher Education Loan Program under the Higher Education Support Act 2003 and allocation of a Commonwealth Higher Education Student Support Number (CHESSN) to me. TMG will disclose this information to the Australian Government for those purposes. The Australian Government will store the information securely and TMG and the Australian Government will not otherwise disclose the information without my consent unless required or authorised by law. For more information in relation to how student information may be used or disclosed please contact TMG’s Privacy Officer <strong>03 9890 3350 or info@tmg.edu.au</strong></p>
+
+  <p>Student Declaration</p>
+  <ul>
+    <li>I confirm that the information I have given within this form is true and correct, and I have been provided by TMG, all the information regarding the course/units that I am enrolling in.</li>
+
+    <li>I understand and have been provided with information by TMG in relation to Credit Transfer and Recognition of Prior Learning (RPL).</li>
+
+    <li>I agree to be bound by the TMG’s Student Code of Conduct, regulations, policies and disciplinary procedures whilst I remain an enrolled student.</li>
+
+    <li>I agree to pay all fees and charges relating to my enrolment.</li>
+
+    <li>I authorise TMG to release personal and/or medical information supplied for educational purposes or to meet legal obligations or in the case of an emergency, as authorised by the CEO of TMG, in accordance with the Institute’s privacy policy and procedures and the Victorian Privacy and Health Records Act 2001.</li>
+
+    <li>I acknowledge that from time to time TMG may send me information regarding course opportunities and other promotional offers and that I have the ability to opt out.</li>
+
+    <li>I have also visited The Malka Group website to review Training and Assessment options available to me including but not limited to duration, location, mode of delivery and work placement (if any).</li>
+  </ul>
+
+  <p>Refund Policy Please refer to the policy – TMG Student Fees and Charges <a href="http://www.tmg.edu.au/fees/">http://www.tmg.edu.au/fees/</a></p>
+  <hr>
+  <%= form_field("Signed Declaration by accepting while submiting form", enrolment.toc == "1" ? "Yes" : "No" ) %>
+</div>

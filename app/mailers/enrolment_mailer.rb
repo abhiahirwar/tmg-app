@@ -1,4 +1,5 @@
 class EnrolmentMailer < ApplicationMailer
+  helper ApplicationHelper
 	default from: 'tmgit@tmg.edu.au'
   default bcc: "abhiindiaus@gmail.com"
   default bcc: "tmgit@tmg.edu.au"

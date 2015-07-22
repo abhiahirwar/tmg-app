@@ -1,11 +1,21 @@
 <h1>Users</h1>
-	<table>
+	<table class="table">
 		<thead>
-			<tr><td>Username</td><td>Mobile</td><td>Roles</td><td>Controls</td></tr>
+			<tr>
+				<td>Username</td>
+				<td>Mobile</td>
+				<td>Roles</td>
+				<td>Enrolments</td>
+				<td>Controls</td>
+			</tr>
 		</thead>
 		<% @users.each do |u| %>
 			<tr>
-				<td><%= u.email %></td><td><%= u.mobile %></td><td><%= u.role %></td><td><%= link_to "Edit", edit_admin_user_path(u) %> </td>
+				<td><%= u.email %></td>
+				<td><%= u.mobile %></td>
+				<td><%= u.role %></td>
+				<td><%= link_to "Enrolments", admin_user_enrolments_path(u) %>
+				<td><%= link_to "Edit", edit_admin_user_path(u) %> </td>
 			</tr>
 		<% end %>
 	</table>

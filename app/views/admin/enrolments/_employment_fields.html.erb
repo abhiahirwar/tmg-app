@@ -1,0 +1,16 @@
+<div class="ques">
+	9. Employment
+</div >
+<div class="row">
+	<div class="col-sm-12">
+    <%= f.select :employment_status, employment_select, :prompt => 'Select', label: 'Which Of the following categories, which BEST describes your current employment status?' %>
+	</div>
+	<div class="col-sm-12">
+    <%= f.select :recent_occupation, current_occupation_select, :prompt => 'Select', label: 'Which of the following classifications BEST describes your current or recent occupation?' %>
+	</div>
+	<div class="col-sm-12">
+    <%= f.select :industry, industry_select, :prompt => 'Select', label: 'Which of the following classifications BEST describes the Industry of your current or previous employer?' %>
+	</div>
+</div>
+
+
