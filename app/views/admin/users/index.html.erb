@@ -6,6 +6,8 @@
 				<td>Mobile</td>
 				<td>Roles</td>
 				<td>Enrolments</td>
+				<td>Created At</td>
+				<td>Last Login</td>
 				<td>Controls</td>
 			</tr>
 		</thead>
@@ -15,6 +17,8 @@
 				<td><%= u.mobile %></td>
 				<td><%= u.role %></td>
 				<td><%= link_to "Enrolments", admin_user_enrolments_path(u) %>
+				<td><%= u.created_at %></td>
+				<td><%= u.last_sign_in_at %></td>
 				<td><%= link_to "Edit", edit_admin_user_path(u) %> </td>
 			</tr>
 		<% end %>
