@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :questions, through: :answers
   before_create :set_default_role
-
-
+  validates :role, presence: true
 
   ROLES = %w[student moderator admin superadmin]
 	def role?(base_role)
