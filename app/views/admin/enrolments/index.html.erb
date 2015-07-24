@@ -25,7 +25,6 @@
         <td><%= link_to 'Show', [:admin, enrolment] %></td>
         <td><%= link_to 'Edit', edit_admin_enrolment_path(enrolment) %></td>
         <td><%= link_to 'Destroy', [:admin, enrolment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "Submit", {:controller => "enrolments", :action => "send_enrolment_mail", :id => current_user.try(:enrolments).try(:first).try(:id)} ,{:class => "btn btn-primary pull-right"}%></td>
       </tr>
     <% end %>
   </tbody>

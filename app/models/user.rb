@@ -9,9 +9,18 @@ class User < ActiveRecord::Base
   has_many :enrolments
   has_many :answers
   has_many :questions, through: :answers
+  before_create :set_default_role
+
+
 
   ROLES = %w[student moderator admin superadmin]
 	def role?(base_role)
 	  ROLES.index(base_role.to_s) <= ROLES.index(role)
 	end
+
+  private
+  def set_default_role
+    self.role ||= 'student'
+  end
+
 end

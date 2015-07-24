@@ -25,7 +25,7 @@
     </style>
   </head>
   <body>
-    <strong>Hello <%= @enrolment.try(:student).try(:fullname) %></strong>
+    <strong>Hello, <%= @enrolment.try(:student).try(:fullname) %></strong>
     <p>
       You have successfully submitted online enrolment.
       your username is: <%= @user.email %>.<br>
