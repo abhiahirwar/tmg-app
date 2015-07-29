@@ -18,8 +18,10 @@ class ApplicationController < ActionController::Base
         request.fullpath.split("?")[0] != "/send_enrolment_mail" &&
         !request.xhr?) # don't store ajax calls
        session[:previous_url] = request.fullpath
-       current_user.return_to_url = request.fullpath
-       current_user.save
+       if !current_user.blank?
+         current_user.return_to_url = request.fullpath
+         current_user.save
+       end
     end
   end
 

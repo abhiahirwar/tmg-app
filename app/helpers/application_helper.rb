@@ -43,7 +43,7 @@ module ApplicationHelper
         if current_user.try(:return_to_url).split("/")[3] == "review"
           step = "Review Enrolment Details"
         end
-         step_link = current_user.try(:return_to_url)
+        step_link = current_user.try(:return_to_url)
   		end
     end
 		link_to(step, step_link, class: "btn btn-default btn-primary btn-lg")
