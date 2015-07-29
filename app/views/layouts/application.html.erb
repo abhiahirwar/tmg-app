@@ -9,9 +9,7 @@
 </head>
 <body id=<%= body_id %>>
 	<%= render 'layouts/header' %>
-	<% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
+  <%= render partial: "shared/flash_messages", flash: flash %>
 	<div class="container">
 		<%= yield %>
 		<%= render 'layouts/footer' %>

@@ -20,6 +20,7 @@
 				<td><%= u.created_at %></td>
 				<td><%= u.last_sign_in_at %></td>
 				<td><%= link_to "Edit", edit_admin_user_path(u) %> </td>
+				<td><%= link_to 'Destroy', [:admin, u], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 			</tr>
 		<% end %>
 	</table>
