@@ -38,11 +38,14 @@ module ApplicationHelper
     step_link = new_user_session_path
     if user_signed_in?
       step = "Complete Enrolment"
-      if current_user.try(:return_to_url).split("/")[3] == "review"
-        step = "Review Enrolment Details"
-      end
-      step_link = current_user.try(:return_to_url)
-		end
+      step_link = pre_enrolment_path
+      if !current_user.return_to_url.blank?
+        if current_user.try(:return_to_url).split("/")[3] == "review"
+          step = "Review Enrolment Details"
+        end
+         step_link = current_user.try(:return_to_url)
+  		end
+    end
 		link_to(step, step_link, class: "btn btn-default btn-primary btn-lg")
 	end
 
