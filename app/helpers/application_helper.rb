@@ -35,14 +35,15 @@ module ApplicationHelper
 
 	def enrolment_step
 		step = "Start Online Application"
-		if user_signed_in?
-			if current_user.pre_training_reviews.count != 0
-				step = "Complete Enrolment Details"
-			elsif (current_user.enrolments.count == 0) && (current_user.pre_training_reviews.count != 0)
-				step = "Continue Pre Training Review"
-			end
+    step_link = new_user_session_path
+    if user_signed_in?
+      step = "Complete Enrolment"
+      if current_user.try(:return_to_url).split("/")[3] == "review"
+        step = "Review Enrolment Details"
+      end
+      step_link = current_user.try(:return_to_url)
 		end
-		step
+		link_to(step, step_link, class: "btn btn-default btn-primary btn-lg")
 	end
 
 	def bootstrap_class_for flash_type

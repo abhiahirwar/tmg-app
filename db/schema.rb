@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720071818) do
+ActiveRecord::Schema.define(version: 20150729033911) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "property_name", limit: 255
@@ -251,6 +251,7 @@ ActiveRecord::Schema.define(version: 20150720071818) do
     t.datetime "confirmation_sent_at"
     t.string   "mobile",                 limit: 255
     t.string   "role",                   limit: 255
+    t.string   "return_to_url",          limit: 255
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
