@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     if current_user.role?("superadmin")
       admin_dashboards_path
     else
-       session[:previous_url] || root_path
+        request.env['omniauth.origin'] || stored_location_for(resource) || root_path
     end
   end
 end
