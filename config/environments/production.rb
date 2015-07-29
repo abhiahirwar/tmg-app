@@ -89,11 +89,11 @@ Rails.application.configure do
     :sender_address => %{"Tmg Notifier" <tmgit@tmg.edu.au>},
     :exception_recipients => %w{abhiindiaus@gmail.com}
   }
-  Rails.application.routes.default_url_options[:host] = 'tmg-app.herokuapp.com'
+  Rails.application.routes.default_url_options[:host] = 'online.tmg.edu.au'
 
-  config.action_mailer.default_url_options = { host: "tmg-app.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "online.tmg.edu.au" }
   config.action_mailer.perform_deliveries = true
-  
+
   ENV["GMAIL_USERNAME"] = 'tmgit@tmg.edu.au'
   ENV["GMAIL_PASSWORD"] = 'Tmg$$Routers6'
 
@@ -102,7 +102,7 @@ Rails.application.configure do
   ENV["ACCESS_TOKEN"] = 'ya29.lgEHGtQQerEtZgLzQlUtPMOqSeo7kC-fcOzhvrgRKZlTR_TrDIA0p6WLJR6LI4H27K37ZHzU6YQfoQ'
   ENV["REFRESH_TOKEN"] =  '1/aElQiV7cm8pEnfYa4N_3YVOc6xY6LOkQEY0bXpPD-f1IgOrJDtdun6zK6XiATCKT'
   ENV['GOOGLE_DRIVE_PUBLIC_FOLDER_ID'] = '0B4QFjHfJ3wAFfm9GY3NWdXlNX2dZQmQzRzZTOGtHSFJ6eVNUTEh0al9RUTk5aG1MT0E3ZFE'
-  
+
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
