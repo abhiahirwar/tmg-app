@@ -84,7 +84,7 @@
         </div>
         <%= f.fields_for :student, @student do |s| -%>
           <%= s.text_field :usi, label: 'Enter Your USI' %>
-          <%= s.check_box :have_usi, label: 'No. I give The Malka Group Pty Ltd (TMG) permission to create, view and update a USI on my behalf. Using the personal details entered on the two forms of Identification I have provided TMG. • Driver’s Licence • Australian Passport • Medicare Card • Visa (with Non-Australian Passport) for international students • Birth Certificate (Australian)• Certificate Of Registration By Descent • Citizenship Certificate • Immi Card' %>
+          <%= s.check_box :have_usi, label: 'I don not have one. I give The Malka Group Pty Ltd (TMG) permission to create, view and update a USI on my behalf. Using the personal details entered on the two forms of Identification I have provided TMG. • Driver’s Licence • Australian Passport • Medicare Card • Visa (with Non-Australian Passport) for international students • Birth Certificate (Australian)• Certificate Of Registration By Descent • Citizenship Certificate • Immi Card' %>
 
           <%= s.text_field :city_of_birth, label: 'Enter your city of birth' %>
         <% end -%>
