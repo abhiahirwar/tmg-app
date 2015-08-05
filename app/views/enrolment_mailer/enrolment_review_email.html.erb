@@ -25,11 +25,14 @@
     </style>
   </head>
   <body>
-    <strong>Hello, <%= @enrolment.try(:student).try(:fullname) %></strong>
+    <strong>Hello, <%= @enrolment.try(:student).try(:fullname) %>!</strong>
     <p>
-      You have successfully submitted online enrolment.
-      your username is: <%= @user.email %>.<br>
-    </p>
+      Thank you for submitting your online enrolment and welcome to The Malka Group! You’re joining an amazing training organisation of professionals who love productivity. Your username is: <%= @user.email %>.</p>
+    <p>The Malka Group is one of Australia’s leading private training providers for individuals, businesses, community groups and Government. We have a 15-year track record of success in designing and delivering Government funded, nationally recognised training qualifications.
+      Just hit reply to this email to get in touch with any enquiry, feedback, questions, or ideas for us! We’d love to have a chat with you.</p>
+
+    <p>Have an awesome day!</p>
+    <hr>
     <%= render 'pre_training_review_details', :pre_training_review => @user.pre_training_reviews.first %>
     <%= render 'enrolment_details', :enrolment => @enrolment %>
     <%= render 'static_pages/application_information/student_ids', :enrolment => @enrolment %>

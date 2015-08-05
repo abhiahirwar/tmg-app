@@ -2,7 +2,7 @@
 
 <h1>Listing Courses</h1>
 
-<table class="table">
+<table class="table" id="courses">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,7 +17,7 @@
       <th>Study duration</th>
       <th>Course review document URL</th>
       <th>Web Url</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -36,9 +36,9 @@
         <td><%= course.study_duration %></td>
         <td><%= link_to "Review Document", course.course_review_document, target: "_blank" %></td>
         <td><%= link_to "Web Link", course.web_link, target: "_blank" %></td>
-        <td><%= link_to 'Show', [:admin, course] %></td>
-        <td><%= link_to 'Edit', edit_admin_course_path(course) %></td>
-        <td><%= link_to 'Destroy',[:admin, course], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:admin, course] %>
+         <%= link_to 'Edit', edit_admin_course_path(course) %>
+         <%= link_to 'Destroy',[:admin, course], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

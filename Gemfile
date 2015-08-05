@@ -53,6 +53,8 @@ gem "font-awesome-rails"
 
 gem 'premailer-rails'
 
+gem 'jquery-datatables-rails', '~> 3.3.0'
+
 
 # gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use Unicorn as the app server
