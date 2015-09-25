@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
         request.fullpath != "/sign_up" &&
         request.fullpath != "/password/new" &&
         request.fullpath != "/confirmation/new" &&
+        request.fullpath != "/password" &&
         request.fullpath != "/logout" &&
         request.fullpath != "/success" &&
         request.fullpath != "/" &&
