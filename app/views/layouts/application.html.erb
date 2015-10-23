@@ -10,7 +10,7 @@
 <body id=<%= body_id %>>
 	<%= render 'layouts/header' %>
   <%= render partial: "shared/flash_messages", flash: flash %>
-	<div class="container">
+	<div class="container main-container">
 		<%= yield %>
 		<%= render 'layouts/footer' %>
 		<%= debug(params) if Rails.env.development? %>
