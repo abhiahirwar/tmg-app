@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
-  has_many :pre_training_reviews
-  has_many :enrolments
-  has_many :answers
-  has_many :questions, through: :answers
+  has_many :pre_training_reviews, :dependent => :delete_all
+  has_many :enrolments, :dependent => :delete_all
+  has_many :answers, :dependent => :delete_all
+  has_many :questions, through: :answers, :dependent => :delete_all
   before_create :set_default_role
   # validates :role, presence: true
 
