@@ -95,7 +95,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   ENV["GMAIL_USERNAME"] = 'tmgit@tmg.edu.au'
-  ENV["GMAIL_PASSWORD"] = 'Tmg$$Routers6'
+
 
   ENV["CLIENT_ID"] = '530079316263-8dcpqaoeg3hp3asga08t0th5q03o5lav.apps.googleusercontent.com'
   ENV["CLIENT_SECRET"] = 'eVxNy3K7o88j55ta10pQ9Lx3'
