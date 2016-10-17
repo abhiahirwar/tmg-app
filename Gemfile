@@ -89,6 +89,11 @@ group :development, :test do
   gem 'factory_girl_rails'
 
   gem "letter_opener"
+
+  gem 'shoulda-matchers', '~> 3.0'
+
+  gem 'database_cleaner'
+
 end
 
 group :test do

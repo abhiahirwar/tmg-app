@@ -13,10 +13,4 @@ RSpec.describe "course_categories/index", type: :view do
       )
     ])
   end
-
-  it "renders a list of course_categories" do
-    render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "Content".to_s, :count => 2
-  end
 end

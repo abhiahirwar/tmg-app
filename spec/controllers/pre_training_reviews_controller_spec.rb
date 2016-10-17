@@ -52,12 +52,12 @@ RSpec.describe PreTrainingReviewsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new pre_training_review as @pre_training_review" do
-      get :new, {}, valid_session
-      expect(assigns(:pre_training_review)).to be_a_new(PreTrainingReview)
-    end
-  end
+  # describe "GET #new" do
+  #   it "assigns a new pre_training_review as @pre_training_review" do
+  #     get :new, {}, valid_session
+  #     expect(assigns(:pre_training_review)).to be_a_new(PreTrainingReview)
+  #   end
+  # end
 
   describe "GET #edit" do
     it "assigns the requested pre_training_review as @pre_training_review" do

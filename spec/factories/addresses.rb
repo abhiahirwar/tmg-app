@@ -1,12 +1,12 @@
 FactoryGirl.define do
   factory :address do
-    property_name "MyString"
-street1 "MyString"
-street2 "MyString"
-suburb "MyString"
-postcode "MyString"
-state "MyString"
-country "MyString"
+    property_name "Property Name"
+    street1 "street1"
+    street2 "street2"
+    suburb "yass"
+    postcode "3025"
+    state "NSW"
+    country "Australia"
   end
 
 end
