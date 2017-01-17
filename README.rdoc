@@ -1,28 +1,24 @@
-== README
+# RTO online Rgistration APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### DESCRIPTION
+  -  The application is used to register online.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### ENVIRONMENTS
+This application was developed on macOS 10.12.1
+
+### SYSTEM DEPENDENCIES & CONFIGURATION
+ruby => 2.2.3p173
+Database => MySql
+
+To check your version run:
+
+$ ruby -v
+
+### APPLICATION INSTALLATION INSTRUCTIONS
+
+To install the application, cd to the root directory and invoke:
+
+    >> bundle install
+
+
