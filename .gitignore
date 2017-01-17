@@ -28,6 +28,8 @@ doc/
 .project
 .DS_Store
 .idea
-.secrets
+.secret
+config/database.yml
+config/secrets.yml
 bundler_stubs/
 /public/uploads
