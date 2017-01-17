@@ -1,4 +1,4 @@
-# RTO online Rgistration APP
+# RTO Online Registration APP
 
 ### DESCRIPTION
   -  The application is used to register online.
