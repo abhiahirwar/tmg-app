@@ -28,6 +28,6 @@ doc/
 .project
 .DS_Store
 .idea
-.secret
+.secrets
 bundler_stubs/
 /public/uploads
